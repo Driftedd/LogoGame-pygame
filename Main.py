@@ -16,7 +16,6 @@ Font_Minecraft = pygame.font.Font("Media/Font_Minecraft.ttf",50)
 text_x_pos = 230
 text_y_pos = 70
 
-
 # Logos completos:
 Pepsi = pygame.image.load("Media/Marcas/pepsi.png").convert_alpha()
 McDonalds = pygame.image.load("Media/Marcas/mcdonalds.png").convert_alpha()
@@ -25,8 +24,6 @@ logitech = pygame.image.load("Media/Marcas/logitech.png").convert_alpha()
 spotify = pygame.image.load("Media/Marcas/spotify.png").convert_alpha()
 starbucks = pygame.image.load("Media/Marcas/starbucks.png").convert_alpha()
 youtube = pygame.image.load("Media/Marcas/youtube.png").convert_alpha()
-
-
 
 # Logos incompletos:
 Pepsi_Incompleto = pygame.image.load("Media/Marcas_Incompletas/pepsi.png").convert_alpha()
@@ -53,7 +50,6 @@ guess1_button = pygame.Rect(1125,190,200,60)
 guess2_button = pygame.Rect(1125,290,200,60)
 guess3_button = pygame.Rect(1125,390,200,60)
 level=1
-
 
 #--------------------------------[Funciones]--------------------------------#
 def animacionLogo(timer_animation,text_y_pos):
@@ -107,7 +103,6 @@ while True:
         point_render = Font_Minecraft.render(f"{point}",False,"White")
         screen.blit(point_render,(1500,700))
         timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
-
 
     elif level == 2:
         screen.blit(Fondo,(0,0))

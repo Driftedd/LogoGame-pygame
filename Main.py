@@ -82,28 +82,46 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if Mouse[0] > 1125 and Mouse[0] < 1325 and Mouse[1] > 190 and Mouse[1] < 250:
                 point += 1
-                level = 2
+                exitosas += 1
             if Mouse[0] > 1125 and Mouse[0] < 1325 and Mouse[1] > 290 and Mouse[1] < 350:
                 point -= 1
             if Mouse[0] > 1125 and Mouse[0] < 1325 and Mouse[1] > 390 and Mouse[1] < 450:
                 point -= 1
 
+    for level in range(1,6):
+        exitosas=0
+        if level == 1:
+            while exitosas!=level*10:
+                screen.blit(Fondo,(0,0))
+                screen.blit(Pepsi_Incompleto,(text_x_pos,text_y_pos))
+                pygame.draw.rect(screen, (80,104,242), guess1_button, 0)
+                pygame.draw.rect(screen, (80,104,242), guess2_button, 0)
+                pygame.draw.rect(screen, (80,104,242), guess3_button, 0)
+                screen.blit(guess1,(1150,200))
+                screen.blit(guess2,(1150,300))
+                screen.blit(guess3,(1150,400))
+                screen.blit(Opciones,(1080,30))
+                screen.blit(Logo,(320,750))
+                point_render = Font_Minecraft.render(f"{point}",False,"White")
+                screen.blit(point_render,(1500,700))
+                timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
 
-    if level == 1:
-        screen.blit(Fondo,(0,0))
-        screen.blit(Pepsi_Incompleto,(text_x_pos,text_y_pos))
-        pygame.draw.rect(screen, (80,104,242), guess1_button, 0)
-        pygame.draw.rect(screen, (80,104,242), guess2_button, 0)
-        pygame.draw.rect(screen, (80,104,242), guess3_button, 0)
-        screen.blit(guess1,(1150,200))
-        screen.blit(guess2,(1150,300))
-        screen.blit(guess3,(1150,400))
-        screen.blit(Opciones,(1080,30))
-        screen.blit(Logo,(320,750))
-        point_render = Font_Minecraft.render(f"{point}",False,"White")
-        screen.blit(point_render,(1500,700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
 
+        elif level == 2:
+                while exitosas!=level*10:
+                    screen.blit(Fondo,(0,0))
+                    screen.blit(McDonalds_Incompleto,(text_x_pos,text_y_pos))
+                    pygame.draw.rect(screen, (80,104,242), guess1_button, 0)
+                    pygame.draw.rect(screen, (80,104,242), guess2_button, 0)
+                    pygame.draw.rect(screen, (80,104,242), guess3_button, 0)
+                    screen.blit(Opciones,(1080,30))
+                    screen.blit(Logo,(320,750))
+                    point_render = Font_Minecraft.render(f"{point}",False,"White")
+                    screen.blit(point_render,(1500,700))
+                    timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
+    pygame.display.update()
+    clock.tick(60)#
+"""
     elif level == 2:
         screen.blit(Fondo,(0,0))
         screen.blit(McDonalds_Incompleto,(text_x_pos,text_y_pos))
@@ -139,8 +157,7 @@ while True:
         point_render = Font_Minecraft.render(f"{point}",False,"White")
         screen.blit(point_render,(1500,700))
         timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
+"""
 
 
-
-    pygame.display.update()
-    clock.tick(60)#
+   

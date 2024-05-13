@@ -24,7 +24,7 @@ def imageChoice(Lista,i):
     return imagen_oculta
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
-screen = pygame.display.set_mode((1600,900))
+screen = pygame.display.set_mode((1500,750))
 pygame.display.set_caption("Quiz Logo")
 clock = pygame.time.Clock()
 Font_Daydream_30 = pygame.font.Font("Media/Font_Daydream.ttf", 30)
@@ -70,10 +70,42 @@ point = 0
 guess1_button = pygame.Rect(1125,190,200,60)
 guess2_button = pygame.Rect(1125,290,200,60)
 guess3_button = pygame.Rect(1125,390,200,60)
+<<<<<<< Updated upstream
 level=1
 exitosas=0
 random.shuffle(Lista)
 # --------------------------------[Game]--------------------------------#
+=======
+level=0
+
+# Admin
+Config_text = Font_Daydream_30.render("CONFIGURACION",False,"aquamarine")
+CantLogos_text = Font_Daydream_30.render("Logos:",False,"aquamarine")
+tiempo_text = Font_Daydream_30.render("Tiempo:",False,"aquamarine")
+
+#--------------------------------[Funciones]--------------------------------#
+def animacionLogo(timer_animation,text_y_pos):
+    timer_animation += 1
+    if text_y_pos == 70 and timer_animation < 15:
+        text_y_pos= 65
+    elif text_y_pos == 65 and timer_animation > 15 and timer_animation < 30:
+        text_y_pos = 60
+    elif text_y_pos == 60 and timer_animation > 30 and timer_animation < 45:
+        text_y_pos = 65
+    elif text_y_pos == 65 and timer_animation > 45:
+        text_y_pos = 70
+    elif timer_animation >= 60:
+        timer_animation = 0
+    return timer_animation, text_y_pos
+
+def imageChoice(Lista,i):
+    random.shuffle(Lista)
+    imagen_oculta = Lista[i][1]
+    return imagen_oculta
+
+
+#--------------------------------[Game]--------------------------------#
+>>>>>>> Stashed changes
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -103,6 +135,7 @@ while True:
         screen.blit(point_render, (1500, 700))
         timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
+<<<<<<< Updated upstream
     elif exitosas > 10 and exitosas <= 30:
         imagen = imageChoice(Lista, exitosas)
         screen.blit(Fondo, (0, 0))
@@ -167,5 +200,43 @@ while True:
         screen.blit(point_render, (1500, 700))
         timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
+=======
+    for level in range(1,6):
+        exitosas=0
+        if level == 1:
+            while exitosas!=level*10:
+                screen.blit(Fondo,(0,0))
+                screen.blit(Pepsi_Incompleto,(text_x_pos,text_y_pos))
+                pygame.draw.rect(screen, (80,104,242), guess1_button, 0)
+                pygame.draw.rect(screen, (80,104,242), guess2_button, 0)
+                pygame.draw.rect(screen, (80,104,242), guess3_button, 0)
+                screen.blit(guess1,(1150,200))
+                screen.blit(guess2,(1150,300))
+                screen.blit(guess3,(1150,400))
+                screen.blit(Opciones,(1080,30))
+                screen.blit(Logo,(320,750))
+                point_render = Font_Minecraft.render(f"{point}",False,"White")
+                screen.blit(point_render,(1500,700))
+                timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
+                
+        elif level == 0:
+            screen.blit(Fondo,(0,0))
+            screen.blit(Config_text, (300,100))
+            screen.blit(tiempo_text,(200,200))
+            screen.blit(CantLogos_text, (650,200))
+            
+        elif level == 2:
+                while exitosas!=level*10:
+                    screen.blit(Fondo,(0,0))
+                    screen.blit(McDonalds_Incompleto,(text_x_pos,text_y_pos))
+                    pygame.draw.rect(screen, (80,104,242), guess1_button, 0)
+                    pygame.draw.rect(screen, (80,104,242), guess2_button, 0)
+                    pygame.draw.rect(screen, (80,104,242), guess3_button, 0)
+                    screen.blit(Opciones,(1080,30))
+                    screen.blit(Logo,(320,750))
+                    point_render = Font_Minecraft.render(f"{point}",False,"White")
+                    screen.blit(point_render,(1500,700))
+                    timer_animation, text_y_pos = animacionLogo(timer_animation,text_y_pos)
+>>>>>>> Stashed changes
     pygame.display.update()
     clock.tick(60)

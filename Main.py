@@ -77,7 +77,7 @@ random.shuffle(Lista)
 '''
 '''
 
-USER="user"
+USER="admin"
 
 '''
 '''
@@ -89,6 +89,9 @@ Nivel_text = Font_Daydream_30.render("Nivel:",False,"aquamarine")
 CantLogos_text = Font_Daydream_30.render("Logos:",False,"aquamarine")
 tiempo_text = Font_Daydream_30.render("Tiempo:",False,"aquamarine")
 Config_text = Font_Daydream_30.render("CONFIGURACION",False,"aquamarine")
+tiempo_button=pygame.Rect(225,250,150,40)
+CantLogos_button=pygame.Rect(660,250,150,40)
+
 
 # --------------------------------[Game]--------------------------------#
 while True:
@@ -107,8 +110,12 @@ while True:
     if USER=="admin":
         screen.blit(Fondo,(0,0))
         screen.blit(Config_text, (300,100))
-        screen.blit(Nivel_text,(200,200))
+        screen.blit(tiempo_text,(200,200))
         screen.blit(CantLogos_text, (650,200))
+        
+        pygame.draw.rect(screen,(80,104,242),tiempo_button, 3)
+        pygame.draw.rect(screen,(80,104,242),CantLogos_button, 3)
+        
         
     else:
         if exitosas <= 10 and exitosas >= 0:

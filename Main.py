@@ -93,6 +93,17 @@ Config_text = Font_Daydream_30.render("CONFIGURACION",False,"aquamarine")
 tiempo_button=pygame.Rect(225,250,150,40)
 CantLogos_button=pygame.Rect(660,250,150,40)
 
+flecha_size=(45,45)
+arriba_flecha= pygame.image.load("Media/flecha_up.png").convert_alpha()
+arriba_flecha=pygame.transform.scale(arriba_flecha,flecha_size)
+abajo_flecha= pygame.image.load("Media/flecha_down.png").convert_alpha()
+abajo_flecha=pygame.transform.scale(abajo_flecha,flecha_size)
+
+tiempo_flecha_arriba=pygame.Rect(230,300,40,40)
+tiempo_flecha_abajo=pygame.Rect(315,300,40,40)
+logo_flecha_arriba=pygame.Rect(665,300,40,40)
+logo_flecha_abajo=pygame.Rect(750,300,40,40)
+
 
 # --------------------------------[Game]--------------------------------#
 while True:
@@ -113,9 +124,23 @@ while True:
         screen.blit(Config_text, (300,100))
         screen.blit(tiempo_text,(200,200))
         screen.blit(CantLogos_text, (650,200))
-        
         pygame.draw.rect(screen,(80,104,242),tiempo_button, 3)
         pygame.draw.rect(screen,(80,104,242),CantLogos_button, 3)
+        screen.blit(arriba_flecha,(230,300))
+        screen.blit(abajo_flecha,(315,300))
+        screen.blit(arriba_flecha,(665,300))
+        screen.blit(abajo_flecha,(750,300))
+        
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if tiempo_flecha_arriba.collidepoint(event.pos):
+                screen.blit(abajo_flecha,(800,300))
+            elif tiempo_flecha_abajo.collidepoint(event.pos):
+                screen.blit(abajo_flecha,(800,300))
+            elif logo_flecha_arriba.collidepoint(event.pos):
+                screen.blit(abajo_flecha,(800,300))
+            elif logo_flecha_abajo.collidepoint(event.pos):
+                screen.blit(abajo_flecha,(800,300))
+                
         
         
     else:

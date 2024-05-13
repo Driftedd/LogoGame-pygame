@@ -73,6 +73,23 @@ guess3_button = pygame.Rect(1125,390,200,60)
 level=1
 exitosas=0
 random.shuffle(Lista)
+
+'''
+'''
+
+USER="admin"
+
+'''
+'''
+
+
+# Admin
+Nivel_text = Font_Daydream_30.render("Nivel:",False,"aquamarine")
+
+CantLogos_text = Font_Daydream_30.render("Logos:",False,"aquamarine")
+tiempo_text = Font_Daydream_30.render("Tiempo:",False,"aquamarine")
+Config_text = Font_Daydream_30.render("CONFIGURACION",False,"aquamarine")
+
 # --------------------------------[Game]--------------------------------#
 while True:
     for event in pygame.event.get():
@@ -87,88 +104,98 @@ while True:
             elif guess3_button.collidepoint(event.pos):
                 exitosas -= 1
     
-    if exitosas <= 10 and exitosas >= 0:
-        imagen = imageChoice(Lista, exitosas)
-        screen.blit(Fondo, (0, 0))
-        screen.blit(imagen, (text_x_pos, text_y_pos))
-        pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-        screen.blit(guess1, (1150, 200))
-        screen.blit(guess2, (1150, 300))
-        screen.blit(guess3, (1150, 400))
-        screen.blit(Opciones, (1080, 30))
-        screen.blit(Logo, (320, 750))
-        point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-        screen.blit(point_render, (1500, 700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+    if USER=="admin":
+        screen.blit(Fondo,(0,0))
+        screen.blit(Config_text, (300,100))
+        screen.blit(Nivel_text,(200,200))
+        screen.blit(CantLogos_text, (650,200))
+        
+    else:
+        if exitosas <= 10 and exitosas >= 0:
+            imagen = imageChoice(Lista, exitosas)
+            screen.blit(Fondo, (0, 0))
+            screen.blit(imagen, (text_x_pos, text_y_pos))
+            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+            screen.blit(guess1, (1150, 200))
+            screen.blit(guess2, (1150, 300))
+            screen.blit(guess3, (1150, 400))
+            screen.blit(Opciones, (1080, 30))
+            screen.blit(Logo, (320, 750))
+            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+            screen.blit(point_render, (1500, 700))
+            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-    elif exitosas > 10 and exitosas <= 30:
-        imagen = imageChoice(Lista, exitosas)
-        screen.blit(Fondo, (0, 0))
-        screen.blit(imagen, (text_x_pos, text_y_pos))
-        pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-        screen.blit(guess1, (1150, 200))
-        screen.blit(guess2, (1150, 300))
-        screen.blit(guess3, (1150, 400))
-        screen.blit(Opciones, (1080, 30))
-        screen.blit(Logo, (320, 750))
-        point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-        screen.blit(point_render, (1500, 700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+        elif exitosas > 10 and exitosas <= 30:
+            imagen = imageChoice(Lista, exitosas)
+            screen.blit(Fondo, (0, 0))
+            screen.blit(imagen, (text_x_pos, text_y_pos))
+            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+            screen.blit(guess1, (1150, 200))
+            screen.blit(guess2, (1150, 300))
+            screen.blit(guess3, (1150, 400))
+            screen.blit(Opciones, (1080, 30))
+            screen.blit(Logo, (320, 750))
+            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+            screen.blit(point_render, (1500, 700))
+            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-    elif exitosas > 30 and exitosas <= 60:
-        imagen = imageChoice(Lista, exitosas)
-        screen.blit(Fondo, (0, 0))
-        screen.blit(imagen, (text_x_pos, text_y_pos))
-        pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-        screen.blit(guess1, (1150, 200))
-        screen.blit(guess2, (1150, 300))
-        screen.blit(guess3, (1150, 400))
-        screen.blit(Opciones, (1080, 30))
-        screen.blit(Logo, (320, 750))
-        point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-        screen.blit(point_render, (1500, 700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+        elif exitosas > 30 and exitosas <= 60:
+            imagen = imageChoice(Lista, exitosas)
+            screen.blit(Fondo, (0, 0))
+            screen.blit(imagen, (text_x_pos, text_y_pos))
+            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+            screen.blit(guess1, (1150, 200))
+            screen.blit(guess2, (1150, 300))
+            screen.blit(guess3, (1150, 400))
+            screen.blit(Opciones, (1080, 30))
+            screen.blit(Logo, (320, 750))
+            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+            screen.blit(point_render, (1500, 700))
+            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-    elif exitosas > 60 and exitosas <= 100:
-        imagen = imageChoice(Lista, exitosas)
-        screen.blit(Fondo, (0, 0))
-        screen.blit(imagen, (text_x_pos, text_y_pos))
-        pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-        screen.blit(guess1, (1150, 200))
-        screen.blit(guess2, (1150, 300))
-        screen.blit(guess3, (1150, 400))
-        screen.blit(Opciones, (1080, 30))
-        screen.blit(Logo, (320, 750))
-        point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-        screen.blit(point_render, (1500, 700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+        elif exitosas > 60 and exitosas <= 100:
+            imagen = imageChoice(Lista, exitosas)
+            screen.blit(Fondo, (0, 0))
+            screen.blit(imagen, (text_x_pos, text_y_pos))
+            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+            screen.blit(guess1, (1150, 200))
+            screen.blit(guess2, (1150, 300))
+            screen.blit(guess3, (1150, 400))
+            screen.blit(Opciones, (1080, 30))
+            screen.blit(Logo, (320, 750))
+            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+            screen.blit(point_render, (1500, 700))
+            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-    elif exitosas > 100 and exitosas <= 150:
-        imagen = imageChoice(Lista, exitosas)
-        screen.blit(Fondo, (0, 0))
-        screen.blit(imagen, (text_x_pos, text_y_pos))
-        pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-        pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-        screen.blit(guess1, (1150, 200))
-        screen.blit(guess2, (1150, 300))
-        screen.blit(guess3, (1150, 400))
-        screen.blit(Opciones, (1080, 30))
-        screen.blit(Logo, (320, 750))
-        point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-        screen.blit(point_render, (1500, 700))
-        timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+        elif exitosas > 100 and exitosas <= 150:
+            imagen = imageChoice(Lista, exitosas)
+            screen.blit(Fondo, (0, 0))
+            screen.blit(imagen, (text_x_pos, text_y_pos))
+            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+            screen.blit(guess1, (1150, 200))
+            screen.blit(guess2, (1150, 300))
+            screen.blit(guess3, (1150, 400))
+            screen.blit(Opciones, (1080, 30))
+            screen.blit(Logo, (320, 750))
+            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+            screen.blit(point_render, (1500, 700))
+            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
     pygame.display.update()
     clock.tick(60)
 
     #Cambio necesario, se puede borrar esta linea de codigo
     javier = "god"
+    steven="god"
+    josue="god"
+    lun="god"

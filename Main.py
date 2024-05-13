@@ -169,3 +169,8 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+
+
+
+    #Cambio necesario, se puede borrar esta linea de codigo
+    javier = "god"

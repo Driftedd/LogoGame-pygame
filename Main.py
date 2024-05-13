@@ -78,7 +78,7 @@ random.shuffle(Lista)
 '''
 
 #si el usuario es admin se abre la configuracion, si es cualquier otra cosa se abre el juego
-USER="admin"
+USER="user"
 
 '''
 '''

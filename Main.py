@@ -77,7 +77,7 @@ random.shuffle(Lista)
 '''
 '''
 
-USER="admin"
+USER="user"
 
 '''
 '''

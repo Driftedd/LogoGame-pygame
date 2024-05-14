@@ -106,6 +106,7 @@ _3m_str = "3M"
 # Setup
 Lista=[[Pepsi,Pepsi_Incompleto,Pepsi_str],[McDonalds,McDonalds_Incompleto,McDonalds_str],[BurgerKing,BurgerKing_Incompleto,BurgerKing_str],[logitech,logitech_Incompleto,logitech_str],[spotify,spotify_Incompleto,spotify_str],[starbucks,starbucks_Incompleto,starbucks_str],[youtube,youtube_Incompleto,youtube_str],[python,python_Incompleto,python_str],[apple,apple_Incompleto,apple_str],[_3m,_3m_Incompleto,_3m_str]]
 Fondo = pygame.image.load("Media/Fondo.png").convert()
+FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
 Logo = Font_Daydream_100.render("Logo",False,"aquamarine")
 timer_animation = 0
@@ -116,7 +117,7 @@ guess3_button = pygame.Rect(1125,390,300,60)
 level=1
 exitosas=0
 random.shuffle(Lista)
-tiempo = 30
+tiempo = 1
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 
@@ -146,7 +147,8 @@ tiempo_flecha_abajo=pygame.Rect(315,300,40,40)
 logo_flecha_arriba=pygame.Rect(665,300,40,40)
 logo_flecha_abajo=pygame.Rect(750,300,40,40)
 
-
+Perdiste_txt = Font_Daydream_100.render("Perdiste",False,(179, 30, 30))
+Perdiste_txt_shadow = Font_Daydream_100.render("Perdiste",False,(97, 10, 10))
 # --------------------------------[Game]--------------------------------#
 while True:
     for event in pygame.event.get():
@@ -190,7 +192,7 @@ while True:
                 screen.blit(abajo_flecha,(800,300))
         
     else:
-        if exitosas <= 10 and exitosas >= 0:
+        if exitosas < 10 and exitosas >= 0:
             imagen,opcion = imageChoice(Lista, exitosas)
             guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,Lista,lugar,lugar2,lugar3)
             guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
@@ -216,10 +218,11 @@ while True:
                 tempo = 60
                 tiempo -=1
             if tiempo < 0:
-                pygame.quit()
-                exit()
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
 
-        elif exitosas > 10 and exitosas <= 30:
+        elif exitosas >= 10 and exitosas < 30:
             imagen = imageChoice(Lista, exitosas)
             screen.blit(Fondo, (0, 0))
             screen.blit(imagen, (text_x_pos, text_y_pos))
@@ -235,7 +238,7 @@ while True:
             screen.blit(point_render, (1500, 700))
             timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-        elif exitosas > 30 and exitosas <= 60:
+        elif exitosas >= 30 and exitosas < 60:
             imagen = imageChoice(Lista, exitosas)
             screen.blit(Fondo, (0, 0))
             screen.blit(imagen, (text_x_pos, text_y_pos))
@@ -251,7 +254,7 @@ while True:
             screen.blit(point_render, (1500, 700))
             timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-        elif exitosas > 60 and exitosas <= 100:
+        elif exitosas >= 60 and exitosas < 100:
             imagen = imageChoice(Lista, exitosas)
             screen.blit(Fondo, (0, 0))
             screen.blit(imagen, (text_x_pos, text_y_pos))
@@ -267,7 +270,7 @@ while True:
             screen.blit(point_render, (1500, 700))
             timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
 
-        elif exitosas > 100 and exitosas <= 150:
+        elif exitosas >= 100 and exitosas < 150:
             imagen = imageChoice(Lista, exitosas)
             screen.blit(Fondo, (0, 0))
             screen.blit(imagen, (text_x_pos, text_y_pos))

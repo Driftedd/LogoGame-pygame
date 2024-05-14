@@ -21,7 +21,41 @@ def animacionLogo(timer_animation,text_y_pos):
 
 def imageChoice(Lista,i):
     imagen_oculta = Lista[i][1]
-    return imagen_oculta
+    text_oculto = Lista[i][2]
+    return imagen_oculta, text_oculto
+
+def textoRandomizador(opcion,Lista,lugar,lugar2,lugar3):
+    if lugar == 1:
+        guess1 = opcion
+        guess2 = Lista[lugar2][2]
+        guess3 = Lista[lugar3][2]
+        tr1 = 1
+        tr2 = -1
+        tr3 = -1
+    elif lugar == 2:
+        guess2 = opcion
+        guess1 = Lista[lugar2][2]
+        guess3 = Lista[lugar3][2]
+        tr1 = -1
+        tr2 = 1
+        tr3 = -1
+    else:
+        guess3 = opcion
+        guess1 = Lista[lugar2][2]
+        guess2 = Lista[lugar3][2]
+        tr1 = -1
+        tr2 = -1
+        tr3 = 1
+    return guess1,guess2,guess3,tr1,tr2,tr3
+
+def randomizer(exitosas):
+    lugar = random.randint(1,3)
+    lugar2 = random.randint(0,8)
+    lugar3 = random.randint(0,8)
+    while lugar3 == exitosas or lugar2 == exitosas or lugar3 == lugar2:
+        lugar2 = random.randint(0,8)
+        lugar3 = random.randint(0,8)
+    return lugar,lugar2,lugar3
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
 screen = pygame.display.set_mode((1600,900))
@@ -57,39 +91,47 @@ python_Incompleto = pygame.image.load("Media/Marcas_Incompletas/python.png").con
 apple_Incompleto = pygame.image.load("Media/Marcas_Incompletas/apple.png").convert_alpha()
 _3m_Incompleto = pygame.image.load("Media/Marcas_Incompletas/3m.png").convert_alpha()
 
+# Strings
+BurgerKing_str = "BurgerKing"
+starbucks_str = "Starbucks" 
+McDonalds_str ="McDonalds"
+logitech_str = "Logitech"
+spotify_str = "Spotify"
+youtube_str ="YouTube"
+python_str = "Python"
+Pepsi_str = "Pepsi"
+apple_str ="Apple"
+_3m_str = "3M"
+
 # Setup
-Lista=[[Pepsi,Pepsi_Incompleto],[McDonalds,McDonalds_Incompleto],[BurgerKing,BurgerKing_Incompleto],[logitech,logitech_Incompleto],[spotify,spotify_Incompleto],[starbucks,starbucks_Incompleto],[youtube,youtube_Incompleto],[python,python_Incompleto],[apple,apple_Incompleto],[_3m,_3m_Incompleto]]
+Lista=[[Pepsi,Pepsi_Incompleto,Pepsi_str],[McDonalds,McDonalds_Incompleto,McDonalds_str],[BurgerKing,BurgerKing_Incompleto,BurgerKing_str],[logitech,logitech_Incompleto,logitech_str],[spotify,spotify_Incompleto,spotify_str],[starbucks,starbucks_Incompleto,starbucks_str],[youtube,youtube_Incompleto,youtube_str],[python,python_Incompleto,python_str],[apple,apple_Incompleto,apple_str],[_3m,_3m_Incompleto,_3m_str]]
 Fondo = pygame.image.load("Media/Fondo.png").convert()
-guess1 = Font_Minecraft.render("PEPSI",False,"White")
-guess2 = Font_Minecraft.render("SPOTIFY",False,"White")
-guess3 = Font_Minecraft.render("FORD",False,"White")
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
 Logo = Font_Daydream_100.render("Logo",False,"aquamarine")
 timer_animation = 0
 point = 0
-guess1_button = pygame.Rect(1125,190,200,60)
-guess2_button = pygame.Rect(1125,290,200,60)
-guess3_button = pygame.Rect(1125,390,200,60)
+guess1_button = pygame.Rect(1125,190,300,60)
+guess2_button = pygame.Rect(1125,290,300,60)
+guess3_button = pygame.Rect(1125,390,300,60)
 level=1
 exitosas=0
 random.shuffle(Lista)
-
-'''
-'''
+tiempo = 30
+tempo = 60
+lugar,lugar2,lugar3 = randomizer(exitosas)
 
 #si el usuario es admin se abre la configuracion, si es cualquier otra cosa se abre el juego
 USER="user"
 
-'''
-'''
-
-
 # Admin
-Nivel_text = Font_Daydream_30.render("Nivel:",False,"aquamarine")
-
-CantLogos_text = Font_Daydream_30.render("Logos:",False,"aquamarine")
-tiempo_text = Font_Daydream_30.render("Tiempo:",False,"aquamarine")
-Config_text = Font_Daydream_30.render("CONFIGURACION",False,"aquamarine")
+Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
+Nivel_text_shadow = Font_Daydream_30.render("Nivel:",False,(2, 77, 67))
+CantLogos_text = Font_Daydream_30.render("Logos:",False,(5, 150, 131))
+CantLogos_text_shadow = Font_Daydream_30.render("Logos:",False,(2, 77, 67))
+tiempo_text = Font_Daydream_30.render("Tiempo:",False,(5, 150, 131))
+tiempo_text_shadow = Font_Daydream_30.render("Tiempo:",False,(2, 77, 67))
+Config_text = Font_Daydream_30.render("CONFIGURACION",False,(5, 150, 131))
+Config_text_shadow = Font_Daydream_30.render("CONFIGURACION",False,(2, 77, 67))
 tiempo_button=pygame.Rect(225,250,150,40)
 CantLogos_button=pygame.Rect(660,250,150,40)
 
@@ -113,16 +155,22 @@ while True:
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             if guess1_button.collidepoint(event.pos):
-                exitosas += 1
+                exitosas = exitosas + tr1 # -1 es igual a + (-1)
+                lugar,lugar2,lugar3 = randomizer(exitosas)
             elif guess2_button.collidepoint(event.pos):
-                exitosas -= 1
+                exitosas = exitosas + tr2 # -1 es igual a + (-1)
+                lugar,lugar2,lugar3 = randomizer(exitosas)
             elif guess3_button.collidepoint(event.pos):
-                exitosas -= 1
-    
+                exitosas = exitosas + tr3 # -1 es igual a + (-1)
+                lugar,lugar2,lugar3 = randomizer(exitosas)
+
     if USER=="admin":
         screen.blit(Fondo,(0,0))
+        screen.blit(Config_text_shadow, (300,105))
         screen.blit(Config_text, (300,100))
+        screen.blit(tiempo_text_shadow,(200,205))
         screen.blit(tiempo_text,(200,200))
+        screen.blit(CantLogos_text_shadow, (650,205))
         screen.blit(CantLogos_text, (650,200))
         pygame.draw.rect(screen,(80,104,242),tiempo_button, 3)
         pygame.draw.rect(screen,(80,104,242),CantLogos_button, 3)
@@ -140,12 +188,14 @@ while True:
                 screen.blit(abajo_flecha,(800,300))
             elif logo_flecha_abajo.collidepoint(event.pos):
                 screen.blit(abajo_flecha,(800,300))
-                
-        
         
     else:
         if exitosas <= 10 and exitosas >= 0:
-            imagen = imageChoice(Lista, exitosas)
+            imagen,opcion = imageChoice(Lista, exitosas)
+            guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,Lista,lugar,lugar2,lugar3)
+            guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+            guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+            guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
             screen.blit(Fondo, (0, 0))
             screen.blit(imagen, (text_x_pos, text_y_pos))
             pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
@@ -158,7 +208,16 @@ while True:
             screen.blit(Logo, (320, 750))
             point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
             screen.blit(point_render, (1500, 700))
+            tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+            screen.blit(tiempo_txt, (1100,850))
             timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+            tempo -= 1
+            if tempo <= 0:
+                tempo = 60
+                tiempo -=1
+            if tiempo < 0:
+                pygame.quit()
+                exit()
 
         elif exitosas > 10 and exitosas <= 30:
             imagen = imageChoice(Lista, exitosas)
@@ -226,9 +285,3 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
-
-    #Cambio necesario, se puede borrar esta linea de codigo
-    javier = "god"
-    steven="god"
-    josue="god"
-    lun="god"

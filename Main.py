@@ -142,7 +142,7 @@ ingresar_button=pygame.Rect(400,450,195,40)
 #si es "admin" se abre la configuracion
 #si es "user" se inicia el juego
 lista_usuarios=["admin","user"]
-USER="START"
+USER="user"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))

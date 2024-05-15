@@ -61,7 +61,9 @@ pygame.init()
 screen = pygame.display.set_mode((1600,900))
 pygame.display.set_caption("Quiz Logo")
 clock = pygame.time.Clock()
+Font_Daydream_20 = pygame.font.Font("Media/Font_Daydream.ttf", 20)
 Font_Daydream_30 = pygame.font.Font("Media/Font_Daydream.ttf", 30)
+Font_Daydream_50 = pygame.font.Font("Media/Font_Daydream.ttf", 50)
 Font_Daydream_100 = pygame.font.Font("Media/Font_Daydream.ttf", 100)
 Font_Minecraft = pygame.font.Font("Media/Font_Minecraft.ttf",50)
 text_x_pos = 230
@@ -121,8 +123,26 @@ tiempo = 1
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 
-#si el usuario es admin se abre la configuracion, si es cualquier otra cosa se abre el juego
-USER="user"
+# Ingreso de usuarios
+usuario_input=""
+password_input=""
+textbox_usuario=pygame.Rect(350,250,300,50)
+textbox_password=pygame.Rect(textbox_usuario.x,textbox_usuario.y+125,textbox_usuario.width,textbox_usuario.height)
+active_user=False
+active_pw=False
+ingreso_text=Font_Daydream_50.render("INGRESO DE USUARIOS",False,(5, 150, 131))
+usuario_text=Font_Daydream_30.render("USER:",False,(5, 150, 131))
+password_text=Font_Daydream_30.render("PASSWORD:",False,(5, 150, 131))
+colour1=pygame.Color(20,30,70,255)
+colour2=colour1
+ingresar_text=Font_Daydream_20.render("Ingresar",False,(5, 150, 131))
+ingresar_button=pygame.Rect(400,450,195,40)
+
+#si el usuario es "START", se muestra la pantalla de inicio de sesion
+#si es "admin" se abre la configuracion
+#si es "user" se inicia el juego
+lista_usuarios=["admin","user"]
+USER="START"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -165,8 +185,57 @@ while True:
             elif guess3_button.collidepoint(event.pos):
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
                 lugar,lugar2,lugar3 = randomizer(exitosas)
+            elif ingresar_button.collidepoint(event.pos):
+                if usuario_input in lista_usuarios:
+                    USER=usuario_input
+            elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
+                if textbox_usuario.collidepoint(event.pos):
+                    active_user=True
+                    active_pw=False
+                else:
+                    active_pw=True
+                    active_user=False
+            else:
+                active_user=False
+                active_pw=False
+        if event.type==pygame.KEYDOWN:
+            if active_user:
+                if event.key == pygame.K_BACKSPACE:
+                    usuario_input=usuario_input[:-1]
+                else:
+                    usuario_input+=event.unicode  
+            elif active_pw:
+                if event.key == pygame.K_BACKSPACE:
+                    password_input=password_input[:-1]
+                else:
+                    password_input+=event.unicode
+                              
 
-    if USER=="admin":
+    if USER=="START":
+        screen.blit(Fondo,(0,0))
+        if active_user:
+            colour1=pygame.Color(0,42,210)
+        else:
+            colour1=pygame.Color(20,30,70,255)
+        if active_pw:
+            colour2=pygame.Color(0,42,210)
+        else:
+            colour2=pygame.Color(20,30,70,255)
+        pygame.draw.rect(screen,colour1,textbox_usuario,0)
+        pygame.draw.rect(screen,colour2,textbox_password,0)
+        surface1=Font_Daydream_30.render(usuario_input,True,"white")
+        surface2=Font_Daydream_30.render(password_input,True,"white")
+        
+        screen.blit(ingreso_text,(80,85))
+        screen.blit(usuario_text,(textbox_usuario.x,textbox_usuario.y-51))
+        screen.blit(surface1,(textbox_usuario.x+5,textbox_usuario.y+5))
+        screen.blit(password_text,(textbox_password.x,textbox_password.y-51))
+        screen.blit(surface2,(textbox_password.x+5,textbox_password.y+5))
+        pygame.draw.rect(screen,"white",ingresar_button)
+        screen.blit(ingresar_text,(ingresar_button.x+1,ingresar_button.y+1))
+
+    
+    elif USER=="admin":
         screen.blit(Fondo,(0,0))
         screen.blit(Config_text_shadow, (300,105))
         screen.blit(Config_text, (300,100))

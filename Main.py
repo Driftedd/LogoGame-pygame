@@ -138,10 +138,22 @@ colour2=colour1
 ingresar_text=Font_Daydream_20.render("Ingresar",False,(5, 150, 131))
 ingresar_button=pygame.Rect(400,450,195,40)
 noEncontrado_text=Font_Daydream_20.render("Usuario no encontrado!",False,("red"))
-crearUsuario=Font_Daydream_20.render("Crear usuario",False,(5, 150, 131))
-regresar_text=Font_Daydream_20.render("Crear usuario",False,(5, 150, 131))
-crearUsuario_button=pygame.Rect(700,700,195,40)
+crear_text=Font_Daydream_50.render("CREAR  USUARIO",False,(5, 150, 131))
+crearUsuario_text=Font_Daydream_20.render("Crear  usuario",False,(5, 150, 131))
+regresar_text=Font_Daydream_20.render("Regresar",False,(5, 150, 131))
+creacionUsuario_button=pygame.Rect(770,700,295,40)
+regresar_button=pygame.Rect(870,700,195,40)
+crearUsuario_real=pygame.Rect(360,450,275,40)
 wrongPw_text=Font_Daydream_20.render("Contrasena incorrecta!",False,("red"))
+errorUsuario=Font_Daydream_20.render("Ingrese un usuario!",False,("red"))
+errorPassword=Font_Daydream_20.render("Ingrese una contrasena!",False,("red"))
+colour3=pygame.Color(5, 150, 131)
+cuatroCaracteres1=noEncontrado_text=Font_Daydream_20.render("*el usuario y la",False,colour3)
+cuatroCaracteres2=noEncontrado_text=Font_Daydream_20.render("contrasena deben tener",False,colour3)
+cuatroCaracteres3=noEncontrado_text=Font_Daydream_20.render("al menos 4 caracteres",False,colour3)
+UsuarioRegistrado=Font_Daydream_20.render("Usuario registrado!",False,(10,255,10))
+yaEstaRegistrado_text=Font_Daydream_20.render("Este usuario ya existe",False,"red")
+
 
 USUARIOS={
     "user":"user",
@@ -156,7 +168,7 @@ USUARIOS={
 #si es "admin" se abre la configuracion
 #si es "CrearUsuario" se abre el menu para crear usuarios
 #si es "user" se inicia el juego
-USER="START"
+USER="user"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -217,11 +229,11 @@ while True:
 
     if USER=="START":
         screen.blit(Fondo,(0,0))
-        if active_user:
+        if active_user==True:
             colour1=pygame.Color(0,42,210)
         else:
             colour1=pygame.Color(20,30,70,255)
-        if active_pw:
+        if active_pw==True:
             colour2=pygame.Color(0,42,210)
         else:
             colour2=pygame.Color(20,30,70,255)
@@ -234,8 +246,8 @@ while True:
         screen.blit(surface1,(textbox_usuario.x+5,textbox_usuario.y+5))
         screen.blit(password_text,(textbox_password.x,textbox_password.y-51))
         screen.blit(surface2,(textbox_password.x+5,textbox_password.y+5))
-        pygame.draw.rect(screen,"white",ingresar_button)
         screen.blit(ingresar_text,(ingresar_button.x+1,ingresar_button.y+1))
+        screen.blit(crearUsuario_text,(creacionUsuario_button.x,creacionUsuario_button.y))
         
         
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -249,7 +261,7 @@ while True:
                         screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
                 else:
                     screen.blit(noEncontrado_text,(ingresar_button.x-120,ingresar_button.y+45))
-            if crearUsuario_button.collidepoint(event.pos):
+            if creacionUsuario_button.collidepoint(event.pos):
                 USER="CrearUsuario"
                     
             elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
@@ -262,9 +274,66 @@ while True:
             else:
                 active_user=False
                 active_pw=False
+                
     elif USER=="CrearUsuario":
         screen.blit(Fondo,(0,0))
+        screen.blit(crear_text,(180,85))
+        screen.blit(regresar_text,(creacionUsuario_button.x+100,creacionUsuario_button.y))
+        pygame.draw.rect(screen,colour1,textbox_usuario,0)
+        pygame.draw.rect(screen,colour2,textbox_password,0)
+        surface1=Font_Daydream_30.render(usuario_input,True,"white")
+        surface2=Font_Daydream_30.render(password_input,True,"white")
+        screen.blit(usuario_text,(textbox_usuario.x,textbox_usuario.y-51))
+        screen.blit(surface1,(textbox_usuario.x+5,textbox_usuario.y+5))
+        screen.blit(password_text,(textbox_password.x,textbox_password.y-51))
+        screen.blit(surface2,(textbox_password.x+5,textbox_password.y+5))
+        screen.blit(crearUsuario_text,(ingresar_button.x-40,ingresar_button.y+1))
+        screen.blit(cuatroCaracteres1,(1060,200))
+        screen.blit(cuatroCaracteres2,(1060,240))
+        screen.blit(cuatroCaracteres3,(1060,280))
+        pygame.draw.rect(screen,"white",crearUsuario_real,0)
         
+        if active_user:
+            colour1=pygame.Color(0,42,210)
+        else:
+            colour1=pygame.Color(20,30,70,255)
+        if active_pw:
+            colour2=pygame.Color(0,42,210)
+        else:
+            colour2=pygame.Color(20,30,70,255)
+               
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if regresar_button.collidepoint(event.pos):
+                USER="START"
+            elif crearUsuario_real.collidepoint(event.pos):
+                if usuario_input in USUARIOS:
+                    print("lol")
+                    #screen.blit(yaEstaRegistrado_text,(ingresar_button.x-20,ingresar_button.y+55))
+                else:
+                    if usuario_input!=" " and password_input!=" ":
+                        if len(usuario_input)>=4 and len(password_input)>=4:
+                            USUARIOS[usuario_input]=password_input
+                            screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
+                        '''else:
+                            colour3=pygame.Color("red")
+                    else:
+                        if usuario_input!=" " and password_input==" ":
+                            screen.blit(errorUsuario,(ingresar_button.x-20,ingresar_button.y+55))
+                        elif usuario_input==" " and password_input!=" ":
+                            screen.blit(errorPassword,(ingresar_button.x-20,ingresar_button.y+55))'''
+                
+            elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
+                if textbox_usuario.collidepoint(event.pos):
+                    active_user=True
+                    active_pw=False
+                else:
+                    active_pw=True
+                    active_user=False
+            else:
+                active_user=False
+                active_pw=False
+                
+            
         
     
     elif USER=="admin":

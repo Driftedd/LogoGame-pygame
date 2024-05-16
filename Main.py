@@ -137,12 +137,26 @@ colour1=pygame.Color(20,30,70,255)
 colour2=colour1
 ingresar_text=Font_Daydream_20.render("Ingresar",False,(5, 150, 131))
 ingresar_button=pygame.Rect(400,450,195,40)
+noEncontrado_text=Font_Daydream_20.render("Usuario no encontrado!",False,("red"))
+crearUsuario=Font_Daydream_20.render("Crear usuario",False,(5, 150, 131))
+regresar_text=Font_Daydream_20.render("Crear usuario",False,(5, 150, 131))
+crearUsuario_button=pygame.Rect(700,700,195,40)
+wrongPw_text=Font_Daydream_20.render("Contrasena incorrecta!",False,("red"))
 
-#si el usuario es "START", se muestra la pantalla de inicio de sesion
+USUARIOS={
+    "user":"user",
+    "admin":"admin",
+    "lun":"lun",
+    "javier":"javier",
+    "josue":'josue',
+    "steven":"steven"
+}
+
+#si USER es "START", se muestra la pantalla de inicio de sesion
 #si es "admin" se abre la configuracion
+#si es "CrearUsuario" se abre el menu para crear usuarios
 #si es "user" se inicia el juego
-lista_usuarios=["admin","user"]
-USER="user"
+USER="START"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -185,19 +199,9 @@ while True:
             elif guess3_button.collidepoint(event.pos):
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
                 lugar,lugar2,lugar3 = randomizer(exitosas)
-            elif ingresar_button.collidepoint(event.pos):
-                if usuario_input in lista_usuarios:
-                    USER=usuario_input
-            elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
-                if textbox_usuario.collidepoint(event.pos):
-                    active_user=True
-                    active_pw=False
-                else:
-                    active_pw=True
-                    active_user=False
-            else:
-                active_user=False
-                active_pw=False
+                
+                
+
         if event.type==pygame.KEYDOWN:
             if active_user:
                 if event.key == pygame.K_BACKSPACE:
@@ -225,7 +229,6 @@ while True:
         pygame.draw.rect(screen,colour2,textbox_password,0)
         surface1=Font_Daydream_30.render(usuario_input,True,"white")
         surface2=Font_Daydream_30.render(password_input,True,"white")
-        
         screen.blit(ingreso_text,(80,85))
         screen.blit(usuario_text,(textbox_usuario.x,textbox_usuario.y-51))
         screen.blit(surface1,(textbox_usuario.x+5,textbox_usuario.y+5))
@@ -233,7 +236,36 @@ while True:
         screen.blit(surface2,(textbox_password.x+5,textbox_password.y+5))
         pygame.draw.rect(screen,"white",ingresar_button)
         screen.blit(ingresar_text,(ingresar_button.x+1,ingresar_button.y+1))
-
+        
+        
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if ingresar_button.collidepoint(event.pos):
+                if usuario_input in USUARIOS:
+                    if usuario_input=="admin" and password_input=="admin":
+                        USER=usuario_input
+                    elif password_input==USUARIOS[usuario_input]:
+                        USER="user"
+                    elif password_input!=USUARIOS[usuario_input]:
+                        screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
+                else:
+                    screen.blit(noEncontrado_text,(ingresar_button.x-120,ingresar_button.y+45))
+            if crearUsuario_button.collidepoint(event.pos):
+                USER="CrearUsuario"
+                    
+            elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
+                if textbox_usuario.collidepoint(event.pos):
+                    active_user=True
+                    active_pw=False
+                else:
+                    active_pw=True
+                    active_user=False
+            else:
+                active_user=False
+                active_pw=False
+    elif USER=="CrearUsuario":
+        screen.blit(Fondo,(0,0))
+        
+        
     
     elif USER=="admin":
         screen.blit(Fondo,(0,0))

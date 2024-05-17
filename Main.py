@@ -105,8 +105,21 @@ Pepsi_str = "Pepsi"
 apple_str ="Apple"
 _3m_str = "3M"
 
+# Tiempos
+P_TiempoTardado = 0
+M_TiempoTardado = 0
+B_TiempoTardado = 0
+L_TiempoTardado = 0
+S_TiempoTardado = 0
+SB_TiempoTardado = 0
+YT_TiempoTardado = 0
+PY_TiempoTardado = 0
+A_TiempoTardado = 0
+M3_TiempoTardado = 0
+
+
 # Setup
-Lista=[[Pepsi,Pepsi_Incompleto,Pepsi_str],[McDonalds,McDonalds_Incompleto,McDonalds_str],[BurgerKing,BurgerKing_Incompleto,BurgerKing_str],[logitech,logitech_Incompleto,logitech_str],[spotify,spotify_Incompleto,spotify_str],[starbucks,starbucks_Incompleto,starbucks_str],[youtube,youtube_Incompleto,youtube_str],[python,python_Incompleto,python_str],[apple,apple_Incompleto,apple_str],[_3m,_3m_Incompleto,_3m_str]]
+Lista=[[Pepsi,Pepsi_Incompleto,Pepsi_str,P_TiempoTardado],[McDonalds,McDonalds_Incompleto,McDonalds_str,M_TiempoTardado],[BurgerKing,BurgerKing_Incompleto,BurgerKing_str,B_TiempoTardado],[logitech,logitech_Incompleto,logitech_str,L_TiempoTardado],[spotify,spotify_Incompleto,spotify_str,S_TiempoTardado],[starbucks,starbucks_Incompleto,starbucks_str,SB_TiempoTardado],[youtube,youtube_Incompleto,youtube_str,YT_TiempoTardado],[python,python_Incompleto,python_str,PY_TiempoTardado],[apple,apple_Incompleto,apple_str,A_TiempoTardado],[_3m,_3m_Incompleto,_3m_str,M3_TiempoTardado]]
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")

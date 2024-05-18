@@ -430,7 +430,7 @@ USUARIOS={
 #si es "admin" se abre la configuracion
 #si es "CrearUsuario" se abre el menu para crear usuarios
 #si es "user" se inicia el juego
-USER="user"
+USER="START"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -612,7 +612,7 @@ while True:
         screen.blit(abajo_flecha,(750,300))
         
         time_changingtext=Font_Daydream_30.render(str(tiempo),False,"black")
-        logos_changingtext=Font_Daydream_30.render(str(logos_int),False,"black")
+        logos_changingtext=Font_Daydream_30.render(str(Cantidad_Logos_Admin),False,"black")
         
         screen.blit(time_changingtext,(tiempo_button.x,tiempo_button.y))
         screen.blit(logos_changingtext,(CantLogos_button.x,CantLogos_button.y))
@@ -625,9 +625,9 @@ while True:
             elif tiempo_flecha_abajo.collidepoint(event.pos):
                 tiempo=tiempo-1
             elif logo_flecha_arriba.collidepoint(event.pos):
-                logos_int=logos_int+1
+                Cantidad_Logos_Admin=Cantidad_Logos_Admin+1
             elif logo_flecha_abajo.collidepoint(event.pos):
-                logos_int=logos_int-1
+                Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
         if level == 1:

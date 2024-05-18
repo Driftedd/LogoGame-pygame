@@ -245,8 +245,8 @@ autodesk_str="Autodesk"
 balance_str="Balance"
 blackberry_str="BlackBerry"
 chevro_str="Chevrolet"
-coke_str="Coke"
-delMonte_str="Del Monte"
+coke_str="CocaCola"
+delMonte_str="delMonte"
 discord_str="Discord"
 dreamworks_str="Dreamworks"
 facebook_str = "Facebook"
@@ -375,7 +375,7 @@ guess1_button = pygame.Rect(1125,190,300,60)
 guess2_button = pygame.Rect(1125,290,300,60)
 guess3_button = pygame.Rect(1125,390,300,60)
 level=1
-Cantidad_Logos_Admin = 10 #Poner que se cambie 
+Cantidad_Logos_Admin = 10 
 exitosas=0
 tiempo = 600
 tempo = 60
@@ -430,7 +430,7 @@ USUARIOS={
 #si es "admin" se abre la configuracion
 #si es "CrearUsuario" se abre el menu para crear usuarios
 #si es "user" se inicia el juego
-USER="user"
+USER="START"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -612,7 +612,7 @@ while True:
         screen.blit(abajo_flecha,(750,300))
         
         time_changingtext=Font_Daydream_30.render(str(tiempo),False,"black")
-        logos_changingtext=Font_Daydream_30.render(str(logos_int),False,"black")
+        logos_changingtext=Font_Daydream_30.render(str(Cantidad_Logos_Admin),False,"black")
         
         screen.blit(time_changingtext,(tiempo_button.x,tiempo_button.y))
         screen.blit(logos_changingtext,(CantLogos_button.x,CantLogos_button.y))
@@ -625,9 +625,9 @@ while True:
             elif tiempo_flecha_abajo.collidepoint(event.pos):
                 tiempo=tiempo-1
             elif logo_flecha_arriba.collidepoint(event.pos):
-                logos_int=logos_int+1
+                Cantidad_Logos_Admin=Cantidad_Logos_Admin+1
             elif logo_flecha_abajo.collidepoint(event.pos):
-                logos_int=logos_int-1
+                Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
         if level == 1:
@@ -646,7 +646,7 @@ while True:
                 screen.blit(guess2, (1150, 300))
                 screen.blit(guess3, (1150, 400))
                 screen.blit(Opciones, (1080, 30))
-                screen.blit(Nivel1, (320, 750))
+                screen.blit(Nivel1, (220, 750))
                 point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
                 screen.blit(point_render, (1500, 700))
                 tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
@@ -680,7 +680,7 @@ while True:
                 screen.blit(guess2, (1150, 300))
                 screen.blit(guess3, (1150, 400))
                 screen.blit(Opciones, (1080, 30))
-                screen.blit(Nivel2, (320, 750))
+                screen.blit(Nivel2, (220, 750))
                 point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
                 screen.blit(point_render, (1500, 700))
                 tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
@@ -713,7 +713,7 @@ while True:
                 screen.blit(guess2, (1150, 300))
                 screen.blit(guess3, (1150, 400))
                 screen.blit(Opciones, (1080, 30))
-                screen.blit(Nivel3, (320, 750))
+                screen.blit(Nivel3, (220, 750))
                 point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
                 screen.blit(point_render, (1500, 700))
                 tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
@@ -747,7 +747,7 @@ while True:
                 screen.blit(guess2, (1150, 300))
                 screen.blit(guess3, (1150, 400))
                 screen.blit(Opciones, (1080, 30))
-                screen.blit(Nivel4, (320, 750))
+                screen.blit(Nivel4, (220, 750))
                 point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
                 screen.blit(point_render, (1500, 700))
                 tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
@@ -781,7 +781,7 @@ while True:
                 screen.blit(guess2, (1150, 300))
                 screen.blit(guess3, (1150, 400))
                 screen.blit(Opciones, (1080, 30))
-                screen.blit(Nivel5, (320, 750))
+                screen.blit(Nivel5, (220, 750))
                 point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
                 screen.blit(point_render, (1500, 700))
                 tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")

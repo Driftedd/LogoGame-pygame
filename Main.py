@@ -58,7 +58,13 @@ def randomizer(exitosas):
         lugar3 = random.randint(0,8)
     return lugar,lugar2,lugar3
 
-
+def GuardarTiempos(tiempoanterior,tiempo):
+    global tiempo_admin
+    if tiempoanterior==0:
+        return tiempo_admin-tiempo
+    elif tiempoanterior != 0:
+        return tiempoanterior + (tiempo_admin-tiempo)
+    
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
 screen = pygame.display.set_mode((1600,900))
@@ -361,6 +367,8 @@ random.shuffle(ListaNivel4)
 ListaNivel5=[]
 random.shuffle(ListaNivel5)
 
+Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
+
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
@@ -377,7 +385,9 @@ guess3_button = pygame.Rect(1125,390,300,60)
 level=1
 Cantidad_Logos_Admin = 10 
 exitosas=0
-tiempo = 600
+NLogo=0
+tiempo_admin = 30
+tiempo = tiempo_admin
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 
@@ -467,13 +477,25 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if guess1_button.collidepoint(event.pos):
                 exitosas = exitosas + tr1 # -1 es igual a + (-1)
-                lugar,lugar2,lugar3 = randomizer(exitosas)
+                NLogo+=1
+                lugar,lugar2,lugar3 = randomizer(NLogo)
+                tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
+                Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
+                print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
             elif guess2_button.collidepoint(event.pos):
                 exitosas = exitosas + tr2 # -1 es igual a + (-1)
-                lugar,lugar2,lugar3 = randomizer(exitosas)
+                NLogo+=1
+                lugar,lugar2,lugar3 = randomizer(NLogo)
+                tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
+                Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
+                print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
             elif guess3_button.collidepoint(event.pos):
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
-                lugar,lugar2,lugar3 = randomizer(exitosas)
+                NLogo+=1
+                lugar,lugar2,lugar3 = randomizer(NLogo)
+                tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
+                Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
+                print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
 
         if event.type==pygame.KEYDOWN:
             if active_user:
@@ -609,7 +631,7 @@ while True:
         screen.blit(arriba_flecha,(665,300))
         screen.blit(abajo_flecha,(750,300))
         
-        time_changingtext=Font_Daydream_30.render(str(tiempo),False,"black")
+        time_changingtext=Font_Daydream_30.render(str(tiempo_admin),False,"black")
         logos_changingtext=Font_Daydream_30.render(str(Cantidad_Logos_Admin),False,"black")
         
         screen.blit(time_changingtext,(tiempo_button.x,tiempo_button.y))
@@ -619,9 +641,9 @@ while True:
             if regresar_button.collidepoint(event.pos):
                 USER="START"
             elif tiempo_flecha_arriba.collidepoint(event.pos):
-                tiempo=tiempo+1
+                tiempo_admin=tiempo_admin+1
             elif tiempo_flecha_abajo.collidepoint(event.pos):
-                tiempo=tiempo-1
+                tiempo_admin=tiempo_admin-1
             elif logo_flecha_arriba.collidepoint(event.pos):
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin+1
             elif logo_flecha_abajo.collidepoint(event.pos):
@@ -629,8 +651,8 @@ while True:
    
     else:
         if level == 1:
-            if exitosas < Cantidad_Logos_Admin*1:
-                imagen,opcion = imageChoice(ListaNivel1, exitosas)
+            if exitosas < Cantidad_Logos_Admin*1 and NLogo<Cantidad_Logos_Admin*1:
+                imagen,opcion = imageChoice(ListaNivel1, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
                 guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
                 guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
@@ -658,13 +680,18 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+            elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*1:
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
             else:
                 exitosas = 0
+                NLogo=0
                 level += 1
 
         elif level == 2:
-            if exitosas < Cantidad_Logos_Admin*2:
-                imagen,opcion = imageChoice(ListaNivel2, exitosas)
+            if exitosas < Cantidad_Logos_Admin*2 and NLogo<Cantidad_Logos_Admin*2:
+                imagen,opcion = imageChoice(ListaNivel2, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
                 guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
                 guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
@@ -692,12 +719,18 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+            elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*2:
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
             else:
                 exitosas = 0
+                NLogo=0
                 level += 1
+                
         elif level == 3:
-            if exitosas < Cantidad_Logos_Admin*3:
-                imagen,opcion = imageChoice(ListaNivel3, exitosas)
+            if exitosas < Cantidad_Logos_Admin*3 and NLogo<Cantidad_Logos_Admin*3:
+                imagen,opcion = imageChoice(ListaNivel3, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel3,lugar,lugar2,lugar3)
                 guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
                 guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
@@ -725,13 +758,18 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+            elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*3:
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
             else:
                 exitosas = 0
+                NLogo=0
                 level += 1
         
         elif level == 4:
-            if exitosas < Cantidad_Logos_Admin*4:
-                imagen,opcion = imageChoice(ListaNivel4, exitosas)
+            if exitosas < Cantidad_Logos_Admin*4 and NLogo<Cantidad_Logos_Admin*4:
+                imagen,opcion = imageChoice(ListaNivel4, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel4,lugar,lugar2,lugar3)
                 guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
                 guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
@@ -759,13 +797,18 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+            elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*4:
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
             else:
                 exitosas = 0
+                NLogo=0
                 level += 1
         
         elif level == 5:
-            if exitosas < Cantidad_Logos_Admin*5:
-                imagen,opcion = imageChoice(ListaNivel5, exitosas)
+            if exitosas < Cantidad_Logos_Admin*5 and NLogo<Cantidad_Logos_Admin*5:
+                imagen,opcion = imageChoice(ListaNivel5, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel5,lugar,lugar2,lugar3)
                 guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
                 guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
@@ -793,8 +836,13 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+            elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*5:
+                screen.blit(FondoNegro, (0,0))
+                screen.blit(Perdiste_txt,(425,195))
+                screen.blit(Perdiste_txt_shadow,(425,200))
             else:
                 exitosas = 0
+                NLogo=0
                 level += 1
 
     pygame.display.update()

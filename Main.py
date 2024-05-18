@@ -56,6 +56,8 @@ def randomizer(exitosas):
         lugar2 = random.randint(0,8)
         lugar3 = random.randint(0,8)
     return lugar,lugar2,lugar3
+
+
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
 screen = pygame.display.set_mode((1600,900))
@@ -70,6 +72,7 @@ text_x_pos = 230
 text_y_pos = 70
 
 # Logos completos:
+# 1
 Pepsi = pygame.image.load("Media/Marcas/pepsi.png").convert_alpha()
 McDonalds = pygame.image.load("Media/Marcas/mcdonalds.png").convert_alpha()
 BurgerKing = pygame.image.load("Media/Marcas/burger-king.png").convert_alpha()
@@ -80,20 +83,127 @@ youtube = pygame.image.load("Media/Marcas/youtube.png").convert_alpha()
 python = pygame.image.load("Media/Marcas/python.png").convert_alpha()
 apple = pygame.image.load("Media/Marcas/apple.png").convert_alpha()
 _3m = pygame.image.load("Media/Marcas/3m.png").convert_alpha()
+# 2
+_7up = 0
+adidas = 0
+amazon = 0
+bmw = 0
+duckduckgo = 0
+ea = 0
+fanta = 0
+hasbro = 0
+jacks = 0
+kfc = 0
+lego = 0
+monster = 0
+netflix = 0
+nfl = 0
+jrockets = 0
+sega = 0
+spacex = 0
+utorrent = 0
+tosty = 0
+vscode = 0
+
+# 3
+adobe = 0
+autodesk = 0
+balance = 0
+blackberry = 0
+chevro = 0
+coke = 0
+delMonte = 0
+discord = 0
+dreamworks = 0
+facebook = 0
+hulu = 0
+microsoft = 0
+motorola = 0
+moyo = 0
+nascar = 0
+nike = 0
+nintendo = 0
+nissan = 0
+office = 0
+pyg = 0
+pizzahut = 0
+purina = 0
+rayovac = 0
+razer = 0
+safari = 0
+siman=0
+sprite=0
+tacobell=0
+toyota=0
+vlc=0
 
 # Logos incompletos:
-Pepsi_Incompleto = pygame.image.load("Media/Marcas_Incompletas/pepsi.png").convert_alpha()
-McDonalds_Incompleto = pygame.image.load("Media/Marcas_Incompletas/mcdonalds.png").convert_alpha()
-BurgerKing_Incompleto = pygame.image.load("Media/Marcas_Incompletas/burger-king.png").convert_alpha()
-logitech_Incompleto = pygame.image.load("Media/Marcas_Incompletas/logitech.png").convert_alpha()
-spotify_Incompleto = pygame.image.load("Media/Marcas_Incompletas/spotify.png").convert_alpha()
-starbucks_Incompleto = pygame.image.load("Media/Marcas_Incompletas/starbucks.png").convert_alpha()
-youtube_Incompleto = pygame.image.load("Media/Marcas_Incompletas/youtube.png").convert_alpha()
-python_Incompleto = pygame.image.load("Media/Marcas_Incompletas/python.png").convert_alpha()
-apple_Incompleto = pygame.image.load("Media/Marcas_Incompletas/apple.png").convert_alpha()
-_3m_Incompleto = pygame.image.load("Media/Marcas_Incompletas/3m.png").convert_alpha()
+# 1
+Pepsi_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/pepsi.png").convert_alpha()
+McDonalds_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/mcdonalds.png").convert_alpha()
+BurgerKing_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/burger-king.png").convert_alpha()
+logitech_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/logitech.png").convert_alpha()
+spotify_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/spotify.png").convert_alpha()
+starbucks_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/starbucks.png").convert_alpha()
+youtube_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/youtube.png").convert_alpha()
+python_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/python.png").convert_alpha()
+apple_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/apple.png").convert_alpha()
+_3m_Incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel1/3m.png").convert_alpha()
+# 2
+_7up_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/7up.png").convert_alpha()
+adidas_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/adidas.png").convert_alpha()
+amazon_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/amazon.png").convert_alpha()
+bmw_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/bmw.png").convert_alpha()
+duckgo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/duckduckgo.png").convert_alpha()
+ea_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/ea.png").convert_alpha()
+fanta_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/fanta.png").convert_alpha()
+hasbro_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/hasbro.png").convert_alpha()
+jacks_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/jacks.png").convert_alpha()
+kfc_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/kfc.png").convert_alpha()
+lego_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/lego.png").convert_alpha()
+monster_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/monster.png").convert_alpha()
+netflix_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/netflix.png").convert_alpha()
+nfl_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/nfl.png").convert_alpha()
+jrockets_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel2/rockets.png").convert_alpha()
+sega_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel2/sega.png").convert_alpha()
+spacex_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel2/space.png").convert_alpha()
+utorrent_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel2/torrent.png").convert_alpha()
+tosty_incompleto  =pygame.image.load("Media/Marcas_Incompletas/Nivel2/tosty.png").convert_alpha()
+vscode_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel2/vscode.png").convert_alpha()
+#3
+adobe_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/adobe.png").convert_alpha()
+autodesk_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/autodesk.png").convert_alpha()
+balance_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/balance.png").convert_alpha()
+blackberry_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/blackberry.png").convert_alpha()
+chevro_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/chevro.png").convert_alpha()
+coke_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/coke.png").convert_alpha()
+delMonte_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/delMonte.png").convert_alpha()
+discord_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/discord.png").convert_alpha()
+dreamworks_incompleto =pygame.image.load("Media/Marcas_Incompletas/Nivel3/dreamworks.png").convert_alpha()
+facebook_incompleto=pygame.image.load("Media/Marcas_Incompletas/Nivel3/facebook.png").convert_alpha()
+hulu_incompleto=pygame.image.load("Media/Marcas_Incompletas/Nivel3/hulu.png").convert_alpha()
+microsoft_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/microsoft.png").convert_alpha()
+motorola_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/motorola.png").convert_alpha()
+moyo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/moyo.png").convert_alpha()
+nascar_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/nascar.png").convert_alpha()
+nike_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/nike.png").convert_alpha()
+nintendo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/nintendo.png").convert_alpha()
+nissan_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/nissan.png").convert_alpha()
+office_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/office.png").convert_alpha()
+pyg_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/p&g.png").convert_alpha()
+pizzahut_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/pizzahut.png").convert_alpha()
+purina_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/purina.png").convert_alpha()
+rayovac_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/rayovac.png").convert_alpha()
+razer_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/razer.png").convert_alpha()
+safari_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/safari.png").convert_alpha()
+siman_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/siman.png").convert_alpha()
+sprite_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/sprite.png").convert_alpha()
+tacobell_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/tacobell.png").convert_alpha()
+toyota_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/toyota.png").convert_alpha()
+vlc_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/vlc.png").convert_alpha()
 
-# Strings
+
+# Strings Nivel1
 BurgerKing_str = "BurgerKing"
 starbucks_str = "Starbucks" 
 McDonalds_str ="McDonalds"
@@ -105,6 +215,60 @@ Pepsi_str = "Pepsi"
 apple_str ="Apple"
 _3m_str = "3M"
 
+
+# Strings Nivel2
+_7up_str="7up"
+adidas_str="Adidas"
+amazon_str="Amazon"
+bmw_str="BMW"
+duckgi_str="Duckgo"
+ea_str="EA"
+fanta_str="Fanta"
+hasbro_str="Hasbro"
+jacks_str="Jacks"
+kfc_str="KFC"
+lego_str="LEGO"
+monster_str="Monster"
+netflix_str="Netflix"
+nfl_str="NFL"
+jrockets_str="J. Rockets"
+sega_str="SEGA"
+spacex_str="SpaceX"
+utorrent_str="UTorrent"
+tosty_str="Tosty"
+vscode_str="VSCode"
+
+#Strings Nivel3
+adobe_str="Adobe"
+autodesk_str="Autodesk"
+balance_str="Balance"
+blackberry_str="BlackBerry"
+chevro_str="Chevrolet"
+coke_str="Coke"
+delMonte_str="Del Monte"
+discord_str="Discord"
+dreamworks_str="Dreamworks"
+facebook_str = "Facebook"
+hulu_str = "Hulu"
+microsoft_str = "Microsoft"
+motorola_str = "Motorola"
+moyo_str = "Moyo"
+nascar_str = "Nascar"
+nike_str = "Nike"
+nintendo_str = "Nintendo"
+nissan_str = "Nissan"
+office_str = "Office"
+pyg_str = "P&G"
+pizzahut_str = "Pizzahut"
+purina_str = "Purina"
+rayovac_str = "Rayovac"
+razer_str = "Razer"
+safari_str = "Safari"
+siman_str = "Siman"
+sprite_str = "Sprite"
+tacobell_str = "TacoBell"
+toyota_str = "Toyota"
+vlc_str = "VLC"
 # Tiempos
 P_TiempoTardado = 0
 M_TiempoTardado = 0
@@ -117,9 +281,83 @@ PY_TiempoTardado = 0
 A_TiempoTardado = 0
 M3_TiempoTardado = 0
 
-
 # Setup
-Lista=[[Pepsi,Pepsi_Incompleto,Pepsi_str,P_TiempoTardado],[McDonalds,McDonalds_Incompleto,McDonalds_str,M_TiempoTardado],[BurgerKing,BurgerKing_Incompleto,BurgerKing_str,B_TiempoTardado],[logitech,logitech_Incompleto,logitech_str,L_TiempoTardado],[spotify,spotify_Incompleto,spotify_str,S_TiempoTardado],[starbucks,starbucks_Incompleto,starbucks_str,SB_TiempoTardado],[youtube,youtube_Incompleto,youtube_str,YT_TiempoTardado],[python,python_Incompleto,python_str,PY_TiempoTardado],[apple,apple_Incompleto,apple_str,A_TiempoTardado],[_3m,_3m_Incompleto,_3m_str,M3_TiempoTardado]]
+ListaNivel1=[
+    [Pepsi,Pepsi_Incompleto,Pepsi_str,P_TiempoTardado],
+    [McDonalds,McDonalds_Incompleto,McDonalds_str,M_TiempoTardado],
+    [BurgerKing,BurgerKing_Incompleto,BurgerKing_str,B_TiempoTardado],
+    [logitech,logitech_Incompleto,logitech_str,L_TiempoTardado],
+    [spotify,spotify_Incompleto,spotify_str,S_TiempoTardado],
+    [starbucks,starbucks_Incompleto,starbucks_str,SB_TiempoTardado],
+    [youtube,youtube_Incompleto,youtube_str,YT_TiempoTardado],
+    [python,python_Incompleto,python_str,PY_TiempoTardado],
+    [apple,apple_Incompleto,apple_str,A_TiempoTardado],
+    [_3m,_3m_Incompleto,_3m_str,M3_TiempoTardado]]
+random.shuffle(ListaNivel1)
+
+ListaNivel2=[
+    [_7up,_7up_incompleto,_7up_str],
+    [adidas,adidas_incompleto,adidas_str],
+    [amazon,amazon_incompleto,amazon_str],
+    [bmw,bmw_incompleto,bmw_str],
+    [duckduckgo,duckgo_incompleto,duckgi_str],
+    [ea,ea_incompleto,ea_str],
+    [fanta,fanta_incompleto,fanta_str],
+    [hasbro,hasbro_incompleto,hasbro_str],
+    [jacks,jacks_incompleto,jacks_str],
+    [kfc,kfc_incompleto,kfc_str],
+    [lego,lego_incompleto,lego_str],
+    [monster,monster_incompleto,monster_str],
+    [nfl,nfl_incompleto,nfl_str],
+    [netflix,netflix_incompleto,netflix_str],
+    [jrockets,jrockets_incompleto,jrockets_str],
+    [sega,sega_incompleto,sega_str],
+    [spacex,spacex_incompleto,spacex_str],
+    [utorrent,utorrent_incompleto,utorrent_str],
+    [vscode,vscode_incompleto,vscode_str],
+    [tosty,tosty_incompleto,tosty_str] ]
+random.shuffle(ListaNivel2)
+
+ListaNivel3=[
+  [adobe, adobe_incompleto, adobe_str],
+  [autodesk, autodesk_incompleto, autodesk_str],
+  [balance, balance_incompleto, balance_str],
+  [blackberry, blackberry_incompleto, blackberry_str],
+  [chevro, chevro_incompleto, chevro_str],
+  [coke, coke_incompleto, coke_str],
+  [delMonte, delMonte_incompleto, delMonte_str],
+  [discord, discord_incompleto, discord_str],
+  [dreamworks, dreamworks_incompleto, dreamworks_str],
+  [facebook, facebook_incompleto, facebook_str],
+  [hulu, hulu_incompleto, hulu_str],
+  [microsoft, microsoft_incompleto, microsoft_str],
+  [motorola, motorola_incompleto, motorola_str],
+  [moyo, moyo_incompleto, moyo_str],
+  [nascar, nascar_incompleto, nascar_str],
+  [nike, nike_incompleto, nike_str],
+  [nintendo, nintendo_incompleto, nintendo_str],
+  [nissan, nissan_incompleto, nissan_str],
+  [office, office_incompleto, office_str],
+  [pyg, pyg_incompleto, pyg_str],
+  [pizzahut, pizzahut_incompleto, pizzahut_str],
+  [purina, purina_incompleto, purina_str],
+  [rayovac, rayovac_incompleto, rayovac_str],
+  [razer, razer_incompleto, razer_str],
+  [safari, safari_incompleto, safari_str],
+  [siman, siman_incompleto, siman_str],
+  [sprite, sprite_incompleto, sprite_str],
+  [tacobell, tacobell_incompleto, tacobell_str],
+  [toyota, toyota_incompleto, toyota_str],
+  [vlc, vlc_incompleto, vlc_str]
+]
+random.shuffle(ListaNivel3)
+
+ListaNivel4=[]
+random.shuffle(ListaNivel4)
+
+ListaNivel5=[]
+random.shuffle(ListaNivel5)
+
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
@@ -130,9 +368,9 @@ guess1_button = pygame.Rect(1125,190,300,60)
 guess2_button = pygame.Rect(1125,290,300,60)
 guess3_button = pygame.Rect(1125,390,300,60)
 level=1
+Cantidad_Logos_Admin = 10 #Poner que se cambie 
 exitosas=0
-random.shuffle(Lista)
-tiempo = 30
+tiempo = 60
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 
@@ -185,7 +423,7 @@ USUARIOS={
 #si es "admin" se abre la configuracion
 #si es "CrearUsuario" se abre el menu para crear usuarios
 #si es "user" se inicia el juego
-USER="START"
+USER="user"
 
 # Admin
 Nivel_text = Font_Daydream_30.render("Nivel:",False,(5, 150, 131))
@@ -215,6 +453,7 @@ logo_flecha_abajo=pygame.Rect(750,300,40,40)
 Perdiste_txt = Font_Daydream_100.render("Perdiste",False,(179, 30, 30))
 Perdiste_txt_shadow = Font_Daydream_100.render("Perdiste",False,(97, 10, 10))
 # --------------------------------[Game]--------------------------------#
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -230,8 +469,6 @@ while True:
             elif guess3_button.collidepoint(event.pos):
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
                 lugar,lugar2,lugar3 = randomizer(exitosas)
-                
-                
 
         if event.type==pygame.KEYDOWN:
             if active_user:
@@ -243,8 +480,7 @@ while True:
                 if event.key == pygame.K_BACKSPACE:
                     password_input=password_input[:-1]
                 else:
-                    password_input+=event.unicode
-                              
+                    password_input+=event.unicode              
 
     if USER=="START":
         screen.blit(Fondo,(0,0))
@@ -267,7 +503,6 @@ while True:
         screen.blit(surface2,(textbox_password.x+5,textbox_password.y+5))
         screen.blit(ingresar_text,(ingresar_button.x+1,ingresar_button.y+1))
         screen.blit(crearUsuario_text,(creacionUsuario_button.x,creacionUsuario_button.y))
-        
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             if ingresar_button.collidepoint(event.pos):
@@ -352,10 +587,7 @@ while True:
             else:
                 active_user=False
                 active_pw=False
-                
-            
-        
-    
+
     elif USER=="admin":
         screen.blit(Fondo,(0,0))
         screen.blit(regresar_text,(regresar_button.x,regresar_button.y+10))
@@ -389,101 +621,176 @@ while True:
                 logos_int=logos_int+1
             elif logo_flecha_abajo.collidepoint(event.pos):
                 logos_int=logos_int-1
-        
+   
     else:
-        if exitosas < 10 and exitosas >= 0:
-            imagen,opcion = imageChoice(Lista, exitosas)
-            guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,Lista,lugar,lugar2,lugar3)
-            guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
-            guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
-            guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
-            screen.blit(Fondo, (0, 0))
-            screen.blit(imagen, (text_x_pos, text_y_pos))
-            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-            screen.blit(guess1, (1150, 200))
-            screen.blit(guess2, (1150, 300))
-            screen.blit(guess3, (1150, 400))
-            screen.blit(Opciones, (1080, 30))
-            screen.blit(Logo, (320, 750))
-            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-            screen.blit(point_render, (1500, 700))
-            tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
-            screen.blit(tiempo_txt, (1100,850))
-            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
-            tempo -= 1
-            if tempo <= 0:
-                tempo = 60
-                tiempo -=1
-            if tiempo < 0:
-                screen.blit(FondoNegro, (0,0))
-                screen.blit(Perdiste_txt,(425,195))
-                screen.blit(Perdiste_txt_shadow,(425,200))
+        if level == 1:
+            if exitosas < Cantidad_Logos_Admin*1:
+                imagen,opcion = imageChoice(ListaNivel1, exitosas)
+                guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
+                guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+                guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+                guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
+                screen.blit(Fondo, (0, 0))
+                screen.blit(imagen, (text_x_pos, text_y_pos))
+                pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+                screen.blit(guess1, (1150, 200))
+                screen.blit(guess2, (1150, 300))
+                screen.blit(guess3, (1150, 400))
+                screen.blit(Opciones, (1080, 30))
+                screen.blit(Logo, (320, 750))
+                point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+                screen.blit(point_render, (1500, 700))
+                tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+                screen.blit(tiempo_txt, (1100,850))
+                timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+                tempo -= 1
+                if tempo <= 0:
+                    tempo = 60
+                    tiempo -=1
+                if tiempo < 0:
+                    screen.blit(FondoNegro, (0,0))
+                    screen.blit(Perdiste_txt,(425,195))
+                    screen.blit(Perdiste_txt_shadow,(425,200))
+            else:
+                exitosas = 0
+                level += 1
 
-        elif exitosas >= 10 and exitosas < 30:
-            imagen = imageChoice(Lista, exitosas)
-            screen.blit(Fondo, (0, 0))
-            screen.blit(imagen, (text_x_pos, text_y_pos))
-            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-            screen.blit(guess1, (1150, 200))
-            screen.blit(guess2, (1150, 300))
-            screen.blit(guess3, (1150, 400))
-            screen.blit(Opciones, (1080, 30))
-            screen.blit(Logo, (320, 750))
-            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-            screen.blit(point_render, (1500, 700))
-            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
-
-        elif exitosas >= 30 and exitosas < 60:
-            imagen = imageChoice(Lista, exitosas)
-            screen.blit(Fondo, (0, 0))
-            screen.blit(imagen, (text_x_pos, text_y_pos))
-            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-            screen.blit(guess1, (1150, 200))
-            screen.blit(guess2, (1150, 300))
-            screen.blit(guess3, (1150, 400))
-            screen.blit(Opciones, (1080, 30))
-            screen.blit(Logo, (320, 750))
-            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-            screen.blit(point_render, (1500, 700))
-            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
-
-        elif exitosas >= 60 and exitosas < 100:
-            imagen = imageChoice(Lista, exitosas)
-            screen.blit(Fondo, (0, 0))
-            screen.blit(imagen, (text_x_pos, text_y_pos))
-            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-            screen.blit(guess1, (1150, 200))
-            screen.blit(guess2, (1150, 300))
-            screen.blit(guess3, (1150, 400))
-            screen.blit(Opciones, (1080, 30))
-            screen.blit(Logo, (320, 750))
-            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-            screen.blit(point_render, (1500, 700))
-            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
-
-        elif exitosas >= 100 and exitosas < 150:
-            imagen = imageChoice(Lista, exitosas)
-            screen.blit(Fondo, (0, 0))
-            screen.blit(imagen, (text_x_pos, text_y_pos))
-            pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
-            pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
-            screen.blit(guess1, (1150, 200))
-            screen.blit(guess2, (1150, 300))
-            screen.blit(guess3, (1150, 400))
-            screen.blit(Opciones, (1080, 30))
-            screen.blit(Logo, (320, 750))
-            point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
-            screen.blit(point_render, (1500, 700))
-            timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+        elif level == 2:
+            if exitosas < Cantidad_Logos_Admin*2:
+                imagen,opcion = imageChoice(ListaNivel2, exitosas)
+                guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
+                guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+                guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+                guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
+                screen.blit(Fondo, (0, 0))
+                screen.blit(imagen, (text_x_pos, text_y_pos))
+                pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+                screen.blit(guess1, (1150, 200))
+                screen.blit(guess2, (1150, 300))
+                screen.blit(guess3, (1150, 400))
+                screen.blit(Opciones, (1080, 30))
+                screen.blit(Logo, (320, 750))
+                point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+                screen.blit(point_render, (1500, 700))
+                tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+                screen.blit(tiempo_txt, (1100,850))
+                timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+                tempo -= 1
+                if tempo <= 0:
+                    tempo = 60
+                    tiempo -=1
+                if tiempo < 0:
+                    screen.blit(FondoNegro, (0,0))
+                    screen.blit(Perdiste_txt,(425,195))
+                    screen.blit(Perdiste_txt_shadow,(425,200))
+            else:
+                exitosas = 0
+                level += 1
+        elif level == 3:
+            if exitosas < Cantidad_Logos_Admin*3:
+                imagen,opcion = imageChoice(ListaNivel3, exitosas)
+                guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel3,lugar,lugar2,lugar3)
+                guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+                guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+                guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
+                screen.blit(Fondo, (0, 0))
+                screen.blit(imagen, (text_x_pos, text_y_pos))
+                pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+                screen.blit(guess1, (1150, 200))
+                screen.blit(guess2, (1150, 300))
+                screen.blit(guess3, (1150, 400))
+                screen.blit(Opciones, (1080, 30))
+                screen.blit(Logo, (320, 750))
+                point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+                screen.blit(point_render, (1500, 700))
+                tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+                screen.blit(tiempo_txt, (1100,850))
+                timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+                tempo -= 1
+                if tempo <= 0:
+                    tempo = 60
+                    tiempo -=1
+                if tiempo < 0:
+                    screen.blit(FondoNegro, (0,0))
+                    screen.blit(Perdiste_txt,(425,195))
+                    screen.blit(Perdiste_txt_shadow,(425,200))
+            else:
+                exitosas = 0
+                level += 1
+        
+        elif level == 4:
+            if exitosas < Cantidad_Logos_Admin*4:
+                imagen,opcion = imageChoice(ListaNivel4, exitosas)
+                guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel4,lugar,lugar2,lugar3)
+                guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+                guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+                guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
+                screen.blit(Fondo, (0, 0))
+                screen.blit(imagen, (text_x_pos, text_y_pos))
+                pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+                screen.blit(guess1, (1150, 200))
+                screen.blit(guess2, (1150, 300))
+                screen.blit(guess3, (1150, 400))
+                screen.blit(Opciones, (1080, 30))
+                screen.blit(Logo, (320, 750))
+                point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+                screen.blit(point_render, (1500, 700))
+                tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+                screen.blit(tiempo_txt, (1100,850))
+                timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+                tempo -= 1
+                if tempo <= 0:
+                    tempo = 60
+                    tiempo -=1
+                if tiempo < 0:
+                    screen.blit(FondoNegro, (0,0))
+                    screen.blit(Perdiste_txt,(425,195))
+                    screen.blit(Perdiste_txt_shadow,(425,200))
+            else:
+                exitosas = 0
+                level += 1
+        
+        elif level == 5:
+            if exitosas < Cantidad_Logos_Admin*5:
+                imagen,opcion = imageChoice(ListaNivel5, exitosas)
+                guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel5,lugar,lugar2,lugar3)
+                guess1 = Font_Minecraft.render(f"{guess1}",(80, 104, 242),"White")
+                guess2 = Font_Minecraft.render(f"{guess2}",(80, 104, 242),"White")
+                guess3 = Font_Minecraft.render(f"{guess3}",(80, 104, 242),"White")
+                screen.blit(Fondo, (0, 0))
+                screen.blit(imagen, (text_x_pos, text_y_pos))
+                pygame.draw.rect(screen, (80, 104, 242), guess1_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess2_button, 0)
+                pygame.draw.rect(screen, (80, 104, 242), guess3_button, 0)
+                screen.blit(guess1, (1150, 200))
+                screen.blit(guess2, (1150, 300))
+                screen.blit(guess3, (1150, 400))
+                screen.blit(Opciones, (1080, 30))
+                screen.blit(Logo, (320, 750))
+                point_render = Font_Minecraft.render(f"{exitosas}", False, "White")
+                screen.blit(point_render, (1500, 700))
+                tiempo_txt = Font_Minecraft.render(f"Tiempo restante: {tiempo}",False,"White")
+                screen.blit(tiempo_txt, (1100,850))
+                timer_animation, text_y_pos = animacionLogo(timer_animation, text_y_pos)
+                tempo -= 1
+                if tempo <= 0:
+                    tempo = 60
+                    tiempo -=1
+                if tiempo < 0:
+                    screen.blit(FondoNegro, (0,0))
+                    screen.blit(Perdiste_txt,(425,195))
+                    screen.blit(Perdiste_txt_shadow,(425,200))
+            else:
+                exitosas = 0
+                level += 1
 
     pygame.display.update()
     clock.tick(60)

@@ -444,8 +444,6 @@ Config_text_shadow = Font_Daydream_30.render("CONFIGURACION",False,(2, 77, 67))
 tiempo_button=pygame.Rect(225,250,150,40)
 CantLogos_button=pygame.Rect(660,250,150,40)
 
-logos_int=10
-
 flecha_size=(45,45)
 arriba_flecha= pygame.image.load("Media/flecha_up.png").convert_alpha()
 arriba_flecha=pygame.transform.scale(arriba_flecha,flecha_size)

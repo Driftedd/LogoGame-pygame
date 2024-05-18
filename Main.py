@@ -86,7 +86,7 @@ _3m = pygame.image.load("Media/Marcas/3m.png").convert_alpha()
 # 2
 _7up = 0
 adidas = 0
-amazon = 0
+amazon = 0.
 bmw = 0
 duckduckgo = 0
 ea = 0

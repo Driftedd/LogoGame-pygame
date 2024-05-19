@@ -65,20 +65,49 @@ def GuardarTiempos(tiempoanterior,tiempo):
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
     
-def agregarNuevoUsuario():
-    with open("allusers.txt","a") as allusers:
-        allusers.write("\n"+usuario_input)
-        allusers.write("\n"+password_input)
-    with open("arhivos/"+str(usuario_input)+".txt",'a+') as user_info:
-            user_info.write(usuario_input+"\n")
-            user_info.write(password_input+"\n")
-            user_info.write(str(tiempo_admin+"\n"))
-            user_info.write(str(Cantidad_Logos_Admin+"\n"))
-            user_info.write(str(exitosas+"\n"))
+def cargarusuarios(USUARIOS):
+    with open("archivos/allusers.txt","r") as allusers:
+        usersList=allusers.read().split("\n")
+    for i in range(0,len(usersList),2):
+        USUARIOS[usersList[i]]=usersList[i+1]
+    return USUARIOS
 
-#def cargarInfoUsuario(USUARIOS, user_input):
-   # with open("arhivos/"+str(usuario_input)+".txt",'w+') as user_info:
-        
+
+def agregarNuevoUsuario():
+    if usuario_input.lower not in USUARIOS:
+        with open("archivos/allusers","a+") as allusers:
+            allusers.write("\n"+usuario_input.lower)
+            allusers.write("\n"+password_input.lower)
+        with open("archivos/all_users/"+str(usuario_input),'a+') as user_info:
+                user_info.write(usuario_input.lower+"\n")
+                user_info.write(password_input.lower+"\n")
+                user_info.write(str(tiempo_admin)+"\n")
+                user_info.write(str(Cantidad_Logos_Admin)+"\n")
+                user_info.write(str(exitosas)+"\n")
+            
+def cargarInfoUsuario():
+    with open("archivos/all_users/"+str(usuario_input),'r+') as user_info: 
+        user_info_list=user_info.read().split("\n")
+        print(user_info_list)
+        global tiempo_admin 
+        tiempo_admin=int(user_info_list[2])
+        global Cantidad_Logos_Admin
+        Cantidad_Logos_Admin=int(user_info_list[3])
+        global exitosas
+        exitosas=int(user_info_list[4])
+        #file_tiempo_total=int(user_info_list[5])
+        #file_promedio=int(user_info_list[6])
+
+def mostrarInfoUsuario():
+    print("usuario:  ", usuario_input)
+    print("password:  ", password_input)
+    print("tiempo admin:  ", tiempo_admin)
+    print("cantidad de logos admin:  ", Cantidad_Logos_Admin)
+    print("logos acertados:  ",exitosas)
+    print("Tiempo acumulado:  ")
+    print("Tiempo promedio:  ")
+    
+
         
     
  
@@ -497,10 +526,7 @@ cuatroCaracteres2_red=Font_Daydream_20.render("contrasena deben tener",False,"re
 cuatroCaracteres3_red=Font_Daydream_20.render("al menos 4 caracteres",False,"red")
 
 USUARIOS={}
-with open("archivos/allusers.txt","r") as allusers:
-    usersList=allusers.read().split("\n")
-    for i in range(0,len(usersList),2):
-        USUARIOS[usersList[i]]=usersList[i+1]
+USUARIOS=cargarusuarios(USUARIOS)
 print(USUARIOS)
 
 #si USER es "START", se muestra la pantalla de inicio de sesion
@@ -604,6 +630,7 @@ while True:
                         USER=usuario_input
                 elif usuario_input in USUARIOS:
                     if password_input==USUARIOS[usuario_input]:
+                        cargarInfoUsuario()
                         USER="user"
                     elif password_input!=USUARIOS[usuario_input]:
                         screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
@@ -653,12 +680,14 @@ while True:
             if regresar_button.collidepoint(event.pos):
                 USER="START"
             elif crearUsuario_real.collidepoint(event.pos):
-                if usuario_input in USUARIOS:
+                if usuario_input.lower in USUARIOS:
                     screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
                 else:
                     if usuario_input!="" and password_input!="":
                         if len(usuario_input)>=4 and len(password_input)>=4:
                             agregarNuevoUsuario()
+                            USUARIOS=cargarusuarios(USUARIOS)
+                            print(USUARIOS)
                             screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
                         else:
                             screen.blit(cuatroCaracteres1_red,(1060,200))
@@ -716,6 +745,7 @@ while True:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
+        mostrarInfoUsuario()
         if level == 1:
             if exitosas < Cantidad_Logos_Admin*1 and NLogo<Cantidad_Logos_Admin*1:
                 imagen,opcion = imageChoice(ListaNivel1, NLogo)

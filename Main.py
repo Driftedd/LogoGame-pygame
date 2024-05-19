@@ -59,54 +59,82 @@ def randomizer(exitosas):
     return lugar,lugar2,lugar3
 
 def GuardarTiempos(tiempoanterior,tiempo):
-    global tiempo_admin
+    tiempo_admin
     if tiempoanterior==0:
         return tiempo_admin-tiempo
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
     
 def cargarusuarios(USUARIOS):
-    with open("archivos/allusers.txt","r") as allusers:
+    with open("archivos/allusers","r") as allusers:
         usersList=allusers.read().split("\n")
     for i in range(0,len(usersList),2):
         USUARIOS[usersList[i]]=usersList[i+1]
     return USUARIOS
 
 
-def agregarNuevoUsuario():
+def agregarNuevoUsuario(USUARIOS):
+    print("llamando agregarNuevoUsuario")
+    print(USUARIOS)
     if usuario_input.lower not in USUARIOS:
         with open("archivos/allusers","a+") as allusers:
-            allusers.write("\n"+usuario_input.lower)
-            allusers.write("\n"+password_input.lower)
-        with open("archivos/all_users/"+str(usuario_input),'a+') as user_info:
-                user_info.write(usuario_input.lower+"\n")
-                user_info.write(password_input.lower+"\n")
-                user_info.write(str(tiempo_admin)+"\n")
-                user_info.write(str(Cantidad_Logos_Admin)+"\n")
-                user_info.write(str(exitosas)+"\n")
+                allusers.write("\n"+usuario_input)
+                allusers.write("\n"+password_input)
+        USUARIOS=cargarusuarios(USUARIOS)
+        print(USUARIOS)
+        tiempototal=0
+        promedio=0
+        with open("archivos/all_users/"+str(usuario_input),'w+') as user_info:
+                user_info.write(usuario_input)
+                user_info.write("\n")
+                user_info.write(password_input)
+                user_info.write("\n")
+                user_info.write(str(exitosas))
+                user_info.write("\n")
+                user_info.write(str(tiempototal))
+                user_info.write("\n")
+                user_info.write(str(promedio))
+                user_info.write("\n0")
+        print("usuario agregado")
+        return USUARIOS
+    else:
+        print("usuario ya registrado")
+        
             
-def cargarInfoUsuario():
-    with open("archivos/all_users/"+str(usuario_input),'r+') as user_info: 
+def guardarInfoUsuario():
+    print("llamando guardarInfoUsuario")
+    with open("archivos/all_users/"+str(usuario_input.lower()),'w+') as user_info:
+        user_info.write(usuario_input.lower()+"\n")
+        user_info.write(password_input.lower()+"\n")
+        user_info.write(str(exitosas)+"\n")
+        user_info.write(str(0)+"\n")
+        user_info.write((str(0))+"\n")
+        
+def cargarInfoUsuario(exitosas,Lista_Niveles):
+    print("llamando cargarInfoUsuario")
+    print("exitosas:  ", exitosas)
+    with open("archivos/all_users/"+str(usuario_input.lower()),'r+') as user_info: 
         user_info_list=user_info.read().split("\n")
         print(user_info_list)
-        #global tiempo_admin 
-        #tiempo_admin=int(user_info_list[2])
-        #global Cantidad_Logos_Admin
-        #Cantidad_Logos_Admin=int(user_info_list[3])
-        global exitosas
-        exitosas=int(user_info_list[4])
-        #file_tiempo_total=int(user_info_list[5])
-        #file_promedio=int(user_info_list[6])
+        exitosas=int(user_info_list[2])
+        print("exitosas:  ", exitosas)
+        #file_tiempo_total
+        #file_promedio
+        #tiempo
+        
 
 def mostrarInfoUsuario():
-    print("usuario:  ", usuario_input)
-    print("password:  ", password_input)
-    print("tiempo admin:  ", tiempo_admin)
-    print("cantidad de logos admin:  ", Cantidad_Logos_Admin)
+    print("llamando mostrarInfoUsuario")
+    print("usuario:  ", usuario_input.lower())
+    print("password:  ", password_input.lower())
     print("logos acertados:  ",exitosas)
     print("Tiempo acumulado:  ")
-    print("Tiempo promedio:  ")  
+    print("Tiempo promedio:  ")
+    print("tiempo admin:  ", tiempo_admin)
+    print("cantidad de logos admin:  ", Cantidad_Logos_Admin)
 mostrar=True   
+
+usuarioAgregado=False
  
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
@@ -464,8 +492,9 @@ random.shuffle(ListaNivel4)
 ListaNivel5=[]
 random.shuffle(ListaNivel5)
 
-Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
-
+#Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
+Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3]#cambiar al de arriba cuando exista una variable para CADA empresa
+              
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
@@ -517,14 +546,14 @@ UsuarioRegistrado=Font_Daydream_20.render("Usuario registrado!",False,(10,255,10
 colour3=pygame.Color(5, 150, 131)
 cuatroCaracteres1=Font_Daydream_20.render("*el usuario y la",False,colour3)
 cuatroCaracteres2=Font_Daydream_20.render("contrasena deben tener",False,colour3)
-cuatroCaracteres3=Font_Daydream_20.render("al menos 4 caracteres",False,colour3)
+cuatroCaracteres3=Font_Daydream_20.render("al menos 3 caracteres",False,colour3)
 cuatroCaracteres1_red=Font_Daydream_20.render("*el usuario y la",False,"red")
 cuatroCaracteres2_red=Font_Daydream_20.render("contrasena deben tener",False,"red")
-cuatroCaracteres3_red=Font_Daydream_20.render("al menos 4 caracteres",False,"red")
+cuatroCaracteres3_red=Font_Daydream_20.render("al menos 3 caracteres",False,"red")
 
 USUARIOS={}
 USUARIOS=cargarusuarios(USUARIOS)
-print(USUARIOS)
+print("USUARIOS:  ",USUARIOS)
 
 #si USER es "START", se muestra la pantalla de inicio de sesion
 #si es "admin" se abre la configuracion
@@ -562,6 +591,9 @@ Perdiste_txt_shadow = Font_Daydream_100.render("Perdiste",False,(97, 10, 10))
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            print("OPERACION TERMINADA")
+            if USER=="user":
+                guardarInfoUsuario()
             pygame.quit()
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -623,11 +655,13 @@ while True:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             if ingresar_button.collidepoint(event.pos):
+                usuario_input=usuario_input.lower()
+                password_input=password_input.lower()
                 if usuario_input=="admin" and password_input=="admin":
                         USER=usuario_input
                 elif usuario_input in USUARIOS:
                     if password_input==USUARIOS[usuario_input]:
-                        cargarInfoUsuario()
+                        cargarInfoUsuario(exitosas,Lista_Niveles)
                         USER="user"
                     elif password_input!=USUARIOS[usuario_input]:
                         screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
@@ -681,10 +715,11 @@ while True:
                     screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
                 else:
                     if usuario_input!="" and password_input!="":
-                        if len(usuario_input)>=4 and len(password_input)>=4:
-                            agregarNuevoUsuario()
-                            USUARIOS=cargarusuarios(USUARIOS)
-                            print(USUARIOS)
+                        if len(usuario_input)>=3 and len(password_input)>=3:
+                            if usuarioAgregado==False:
+                                USUARIOS=agregarNuevoUsuario(USUARIOS)
+                                print(USUARIOS)
+                                usuarioAgregado=True
                             screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
                         else:
                             screen.blit(cuatroCaracteres1_red,(1060,200))
@@ -708,6 +743,8 @@ while True:
                 active_pw=False
 
     elif USER=="admin":
+        password_input=""
+        usuario_input=""
         screen.blit(Fondo,(0,0))
         screen.blit(regresar_text,(regresar_button.x,regresar_button.y+10))
         screen.blit(Config_text_shadow, (300,105))

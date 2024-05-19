@@ -1,6 +1,6 @@
-username=
-password=
-file_logosAcertados=
+username=usuario_nput
+password=password_input
+file_logosAcertados=exitosas
 file_tiempo_total=
 file_promedio=
 

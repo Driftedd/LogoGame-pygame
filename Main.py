@@ -693,13 +693,13 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if regresar_button.collidepoint(event.pos):
                 USER="START"
-            elif tiempo_flecha_arriba.collidepoint(event.pos):
+            elif tiempo_flecha_arriba.collidepoint(event.pos) and tiempo_admin<300:
                 tiempo_admin=tiempo_admin+1
-            elif tiempo_flecha_abajo.collidepoint(event.pos):
+            elif tiempo_flecha_abajo.collidepoint(event.pos) and tiempo_admin>1:
                 tiempo_admin=tiempo_admin-1
-            elif logo_flecha_arriba.collidepoint(event.pos):
+            elif logo_flecha_arriba.collidepoint(event.pos) and Cantidad_Logos_Admin<150:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin+1
-            elif logo_flecha_abajo.collidepoint(event.pos):
+            elif logo_flecha_abajo.collidepoint(event.pos) and Cantidad_Logos_Admin>1:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:

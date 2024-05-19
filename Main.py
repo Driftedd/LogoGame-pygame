@@ -65,6 +65,23 @@ def GuardarTiempos(tiempoanterior,tiempo):
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
     
+def agregarNuevoUsuario():
+    with open("allusers.txt","a") as allusers:
+        allusers.write("\n"+usuario_input)
+        allusers.write("\n"+password_input)
+    with open("arhivos/"+str(usuario_input)+".txt",'a+') as user_info:
+            user_info.write(usuario_input+"\n")
+            user_info.write(password_input+"\n")
+            user_info.write(str(tiempo_admin+"\n"))
+            user_info.write(str(Cantidad_Logos_Admin+"\n"))
+            user_info.write(str(exitosas+"\n"))
+
+#def cargarInfoUsuario(USUARIOS, user_input):
+   # with open("arhivos/"+str(usuario_input)+".txt",'w+') as user_info:
+        
+        
+    
+ 
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
 screen = pygame.display.set_mode((1600,900))
@@ -340,6 +357,7 @@ toyota_TiempoTardado = 0
 vlc_TiempoTardado = 0
 #4
 
+
 #5
 
 
@@ -478,16 +496,12 @@ cuatroCaracteres1_red=Font_Daydream_20.render("*el usuario y la",False,"red")
 cuatroCaracteres2_red=Font_Daydream_20.render("contrasena deben tener",False,"red")
 cuatroCaracteres3_red=Font_Daydream_20.render("al menos 4 caracteres",False,"red")
 
-
-
-USUARIOS={
-    "user":"user",
-    "admin":"admin",
-    "lun":"lun",
-    "javier":"javier",
-    "josue":'josue',
-    "steven":"steven"
-}
+USUARIOS={}
+with open("archivos/allusers.txt","r") as allusers:
+    usersList=allusers.read().split("\n")
+    for i in range(0,len(usersList),2):
+        USUARIOS[usersList[i]]=usersList[i+1]
+print(USUARIOS)
 
 #si USER es "START", se muestra la pantalla de inicio de sesion
 #si es "admin" se abre la configuracion
@@ -586,10 +600,10 @@ while True:
         
         if event.type == pygame.MOUSEBUTTONDOWN:
             if ingresar_button.collidepoint(event.pos):
-                if usuario_input in USUARIOS:
-                    if usuario_input=="admin" and password_input=="admin":
+                if usuario_input=="admin" and password_input=="admin":
                         USER=usuario_input
-                    elif password_input==USUARIOS[usuario_input]:
+                elif usuario_input in USUARIOS:
+                    if password_input==USUARIOS[usuario_input]:
                         USER="user"
                     elif password_input!=USUARIOS[usuario_input]:
                         screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
@@ -597,7 +611,6 @@ while True:
                     screen.blit(noEncontrado_text,(ingresar_button.x-120,ingresar_button.y+45))
             if creacionUsuario_button.collidepoint(event.pos):
                 USER="CrearUsuario"
-                    
             elif textbox_usuario.collidepoint(event.pos) or textbox_password.collidepoint(event.pos):
                 if textbox_usuario.collidepoint(event.pos):
                     active_user=True
@@ -645,7 +658,7 @@ while True:
                 else:
                     if usuario_input!="" and password_input!="":
                         if len(usuario_input)>=4 and len(password_input)>=4:
-                            USUARIOS[usuario_input]=password_input
+                            agregarNuevoUsuario()
                             screen.blit(UsuarioRegistrado,(ingresar_button.x-20,ingresar_button.y+55))
                         else:
                             screen.blit(cuatroCaracteres1_red,(1060,200))

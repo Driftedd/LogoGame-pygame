@@ -89,10 +89,10 @@ def cargarInfoUsuario():
     with open("archivos/all_users/"+str(usuario_input),'r+') as user_info: 
         user_info_list=user_info.read().split("\n")
         print(user_info_list)
-        global tiempo_admin 
-        tiempo_admin=int(user_info_list[2])
-        global Cantidad_Logos_Admin
-        Cantidad_Logos_Admin=int(user_info_list[3])
+        #global tiempo_admin 
+        #tiempo_admin=int(user_info_list[2])
+        #global Cantidad_Logos_Admin
+        #Cantidad_Logos_Admin=int(user_info_list[3])
         global exitosas
         exitosas=int(user_info_list[4])
         #file_tiempo_total=int(user_info_list[5])
@@ -105,11 +105,8 @@ def mostrarInfoUsuario():
     print("cantidad de logos admin:  ", Cantidad_Logos_Admin)
     print("logos acertados:  ",exitosas)
     print("Tiempo acumulado:  ")
-    print("Tiempo promedio:  ")
-    
-
-        
-    
+    print("Tiempo promedio:  ")  
+mostrar=True   
  
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
@@ -745,7 +742,11 @@ while True:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
-        mostrarInfoUsuario()
+
+        if mostrar==True:
+            mostrarInfoUsuario()
+            mostrar=False
+
         if level == 1:
             if exitosas < Cantidad_Logos_Admin*1 and NLogo<Cantidad_Logos_Admin*1:
                 imagen,opcion = imageChoice(ListaNivel1, NLogo)

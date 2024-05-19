@@ -1,7 +1,9 @@
 username=
 password=
-file_tiempoAdmin=
-file_cantLogosAdmin=
 file_logosAcertados=
 file_tiempo_total=
 file_promedio=
+
+tiempo por logos...
+...
+...

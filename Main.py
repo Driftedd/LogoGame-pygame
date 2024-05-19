@@ -771,8 +771,10 @@ while True:
                 USER="START"
             elif tiempo_flecha_arriba.collidepoint(event.pos) and tiempo_admin<300:
                 tiempo_admin=tiempo_admin+1
+                tiempo=tiempo_admin
             elif tiempo_flecha_abajo.collidepoint(event.pos) and tiempo_admin>1:
                 tiempo_admin=tiempo_admin-1
+                tiempo=tiempo_admin
             elif logo_flecha_arriba.collidepoint(event.pos) and Cantidad_Logos_Admin<150:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin+1
             elif logo_flecha_abajo.collidepoint(event.pos) and Cantidad_Logos_Admin>1:

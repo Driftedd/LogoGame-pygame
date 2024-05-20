@@ -114,6 +114,8 @@ def GuardarTiempos(tiempoanterior,tiempo):
     tiempo_admin
     if tiempoanterior==0:
         return tiempo_admin-tiempo
+    elif tiempo_admin==tiempo:
+        return 0
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
 '''
@@ -144,8 +146,6 @@ def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
                 allusers.write("\n"+password_input)
         USUARIOS=cargarusuarios(USUARIOS)
         print(USUARIOS)
-        tiempototal=0
-        promedio=0
         with open("archivos/all_users/"+str(usuario_input),'w+') as user_info:
                 user_info.write(usuario_input)
                 user_info.write("\n")
@@ -175,7 +175,9 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles):
         user_info.write(str(exitosas)+"\n")
         for e in range(len(Lista_Niveles)):
             for i in range(len(Lista_Niveles[e])):
-                user_info.write("\n"+str(Lista_Niveles[e][i][3]))
+                if Lista_Niveles[e][i][3]=='':
+                    Lista_Niveles[e][i][3]=0
+                user_info.write("\n"+(str(Lista_Niveles[e][i][3])))
 '''
 Función:
 Entradas:
@@ -191,6 +193,8 @@ def cargarInfoUsuario():
     contador=0
     for e in range(len(Lista_Niveles)): #5 veces
         for i in range (len(Lista_Niveles[e])): #se repite la cantidad de veces de cada nivel
+            if tiempoPorLogo[contador] == '':
+                tiempoPorLogo[contador]=0
             Lista_Niveles[e][i][3]=int(tiempoPorLogo[contador])
             contador+=1
     return [exitosas,Lista_Niveles]
@@ -1135,9 +1139,8 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             print("OPERACION TERMINADA")
-            if USER=="user":
-                guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles)
-                mostrarInfoUsuario()
+            guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles)
+            mostrarInfoUsuario()
             pygame.quit()
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -1176,6 +1179,7 @@ while True:
                     password_input+=event.unicode              
 
     if USER=="START":
+        print(USER)
         screen.blit(Fondo,(0,0))
         if active_user==True:
             colour1=pygame.Color(0,42,210)
@@ -1231,6 +1235,7 @@ while True:
                 active_pw=False
 
     elif USER=="Leaderboard_General":
+        print(USER)
         screen.blit(leaderboard_background,(0,0))
         screen.blit(leaderboard_title,(540,50))
         screen.blit(leaderboard_regresar,(20,800))
@@ -1240,6 +1245,7 @@ while True:
                 USER = "START"
 
     elif USER == "Leaderboard_Self":
+        print(USER)
         if mostrar==True:
             #cambiar estas dos luego
             tiempototal=0
@@ -1262,6 +1268,7 @@ while True:
 
 
     elif USER=="CrearUsuario":
+        print(USER)
         screen.blit(Fondo,(0,0))
         screen.blit(crear_text,(180,85))
         screen.blit(regresar_text,(regresar_button.x,regresar_button.y+10))
@@ -1324,6 +1331,7 @@ while True:
                 active_pw=False
 
     elif USER=="admin":      
+        print(USER)
         password_input=""
         usuario_input=""
         screen.blit(Fondo,(0,0))

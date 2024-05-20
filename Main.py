@@ -19,6 +19,20 @@ def animacionLogo(timer_animation,text_y_pos):
         timer_animation = 0
     return timer_animation, text_y_pos
 
+def animaciones(timer_animation,text_y_pos,posorigin):
+    timer_animation += 1
+    if text_y_pos == posorigin and timer_animation < 15:
+        text_y_pos = text_y_pos-5
+    elif text_y_pos == posorigin-5 and timer_animation > 15 and timer_animation < 30:
+        text_y_pos = text_y_pos-5
+    elif text_y_pos == posorigin-10 and timer_animation > 30 and timer_animation < 45:
+        text_y_pos = text_y_pos+5
+    elif text_y_pos == posorigin-5 and timer_animation > 45:
+        text_y_pos = text_y_pos+5
+    elif timer_animation>= 60:
+        timer_animation = 0
+    return timer_animation, text_y_pos
+
 def imageChoice(Lista,i):
     imagen_oculta = Lista[i][1]
     text_oculto = Lista[i][2]
@@ -908,8 +922,7 @@ ListaNivel5=[
 ]
 random.shuffle(ListaNivel5)
 
-#Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
-Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3]#cambiar al de arriba cuando exista una variable para CADA empresa
+Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
               
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
@@ -925,7 +938,7 @@ point = 0
 guess1_button = pygame.Rect(1125,190,300,60)
 guess2_button = pygame.Rect(1125,290,300,60)
 guess3_button = pygame.Rect(1125,390,300,60)
-level=5
+level=1
 Cantidad_Logos_Admin = 10 
 exitosas=0
 NLogo=0
@@ -1200,23 +1213,18 @@ while True:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
-
         if mostrar==True:
-            
             #cambiar estas dos luego
             tiempototal=0
             promedio=0
-            
             print('info sin cargar')
             mostrarInfoUsuario()
             infoUsuarioList=cargarInfoUsuario(exitosas,tiempototal,promedio, Lista_Niveles)
             exitosas=infoUsuarioList[0][0]
             tiempototal=infoUsuarioList[0][1]
             promedio=infoUsuarioList[0][2]
-            
             tiemposLogos=infoUsuarioList[1]
             #Lista_Niveles=
-            
             print('info cargada')
             mostrarInfoUsuario()
             mostrar=False
@@ -1251,10 +1259,32 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+                    restart_button = pygame.Rect(700,710,300,60)
+                    restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                    varposicional=700
+                    timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                    screen.blit(restart_txt,(700,varposicional))
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*1:
                 screen.blit(FondoNegro, (0,0))
                 screen.blit(Perdiste_txt,(425,195))
                 screen.blit(Perdiste_txt_shadow,(425,200))
+                restart_button = pygame.Rect(700,710,300,60)
+                restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                varposicional=700
+                timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                screen.blit(restart_txt,(700,varposicional))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             else:
                 exitosas = 0
                 NLogo=0
@@ -1290,15 +1320,37 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+                    restart_button = pygame.Rect(700,700,300,60)
+                    restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                    varposicional=700
+                    timer_animation, varposicional = animaciones(timer_animation, varposicional,posorigin=700)
+                    screen.blit(restart_txt,(700,varposicional))
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*2:
                 screen.blit(FondoNegro, (0,0))
                 screen.blit(Perdiste_txt,(425,195))
                 screen.blit(Perdiste_txt_shadow,(425,200))
+                restart_button = pygame.Rect(700,710,300,60)
+                restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                varposicional=700
+                timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                screen.blit(restart_txt,(700,varposicional))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             else:
                 exitosas = 0
                 NLogo=0
                 level += 1
-                
+
         elif level == 3:
             if exitosas < Cantidad_Logos_Admin*3 and NLogo<Cantidad_Logos_Admin*3:
                 imagen,opcion = imageChoice(ListaNivel3, NLogo)
@@ -1329,15 +1381,37 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+                    restart_button = pygame.Rect(700,710,300,60)
+                    restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                    varposicional=700
+                    timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                    screen.blit(restart_txt,(700,varposicional))
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*3:
                 screen.blit(FondoNegro, (0,0))
                 screen.blit(Perdiste_txt,(425,195))
                 screen.blit(Perdiste_txt_shadow,(425,200))
+                restart_button = pygame.Rect(700,710,300,60)
+                restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                varposicional=700
+                timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                screen.blit(restart_txt,(700,varposicional))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             else:
                 exitosas = 0
                 NLogo=0
                 level += 1
-        
+
         elif level == 4:
             if exitosas < Cantidad_Logos_Admin*4 and NLogo<Cantidad_Logos_Admin*4:
                 imagen,opcion = imageChoice(ListaNivel4, NLogo)
@@ -1368,15 +1442,37 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+                    restart_button = pygame.Rect(700,710,300,60)
+                    restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                    varposicional=700
+                    timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                    screen.blit(restart_txt,(700,varposicional))
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*4:
                 screen.blit(FondoNegro, (0,0))
                 screen.blit(Perdiste_txt,(425,195))
                 screen.blit(Perdiste_txt_shadow,(425,200))
+                restart_button = pygame.Rect(700,710,300,60)
+                restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                varposicional=700
+                timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                screen.blit(restart_txt,(700,varposicional))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             else:
                 exitosas = 0
                 NLogo=0
                 level += 1
-        
+
         elif level == 5:
             if exitosas < Cantidad_Logos_Admin*5 and NLogo<Cantidad_Logos_Admin*5:
                 imagen,opcion = imageChoice(ListaNivel5, NLogo)
@@ -1407,10 +1503,32 @@ while True:
                     screen.blit(FondoNegro, (0,0))
                     screen.blit(Perdiste_txt,(425,195))
                     screen.blit(Perdiste_txt_shadow,(425,200))
+                    restart_button = pygame.Rect(700,710,300,60)
+                    restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                    varposicional=700
+                    timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                    screen.blit(restart_txt,(700,varposicional))
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             elif NLogo!=exitosas and NLogo>=Cantidad_Logos_Admin*5:
                 screen.blit(FondoNegro, (0,0))
                 screen.blit(Perdiste_txt,(425,195))
                 screen.blit(Perdiste_txt_shadow,(425,200))
+                restart_button = pygame.Rect(700,710,300,60)
+                restart_txt = Font_Minecraft.render("Restart",False,(250, 242, 25))
+                varposicional=700
+                timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=700)
+                screen.blit(restart_txt,(700,varposicional))
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                        if restart_button.collidepoint(event.pos):
+                            level=1
+                            exitosas=0
+                            NLogo=0
+                            tiempo = tiempo_admin
             else:
                 exitosas = 0
                 NLogo=0

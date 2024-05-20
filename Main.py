@@ -160,10 +160,10 @@ def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
 
         #return tiempo1,tiempo2,tiempo3,tiempo4,tiempo5,tiempo6
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función: guarda la información del usuario en archivos aparte
+Entradas: usuario y pass, numero de logos adivinados y una lista de niveles
+Salidas: guarda el usuario,contraseña, logos adivinados y el tiempo.
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles):
     print("llamando guardarInfoUsuario")
@@ -177,10 +177,10 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles):
                     Lista_Niveles[e][i][3]=0
                 user_info.write("\n"+(str(Lista_Niveles[e][i][3])))
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función: cargar información de usuario para seguir con el juego.
+Entradas: Abre el archivo externo con datos del usuario
+Salidas: Cantidad de logos adivinados, tiempos y nivel actual
+Restricciones: N/A, no hay interacción con el usuario.
 '''       
 def cargarInfoUsuario():
     print("llamando cargarInfoUsuario")
@@ -196,13 +196,12 @@ def cargarInfoUsuario():
             Lista_Niveles[e][i][3]=int(tiempoPorLogo[contador])
             contador+=1
     return [exitosas,Lista_Niveles]
-        
-          
+
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función: mostrar información del usuario
+Entradas: user,pass,tiempo designado y logos adivinados
+Salidas: hace print a todos los datos.
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def mostrarInfoUsuario():
     print("llamando mostrarInfoUsuario")
@@ -216,9 +215,7 @@ def mostrarInfoUsuario():
         for i in range(len(Lista_Niveles[e])):
             print(Lista_Niveles[e][i][2],"=",Lista_Niveles[e][i][3])
 mostrar=True   
-
 usuarioAgregado=False
- 
 #--------------------------------[Pre-Game]--------------------------------#
 pygame.init()
 screen = pygame.display.set_mode((1600,900))

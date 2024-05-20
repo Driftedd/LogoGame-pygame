@@ -7,3 +7,14 @@ file_promedio=
 tiempo por logos...
 ...
 ...
+
+
+
+infoUsuarioList
+[0]
+- exitosas
+- tiempo total
+- file_promedio
+
+[1]
+- logos

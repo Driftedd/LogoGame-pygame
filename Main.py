@@ -23,13 +23,13 @@ def animaciones(timer_animation,text_y_pos,posorigin):
     timer_animation += 1
     if text_y_pos == posorigin and timer_animation < 15:
         text_y_pos = text_y_pos-5
-    elif text_y_pos == posorigin-5 and timer_animation > 15 and timer_animation < 30:
+    elif text_y_pos == posorigin-10 and timer_animation > 15 and timer_animation < 30:
         text_y_pos = text_y_pos-5
     elif text_y_pos == posorigin-10 and timer_animation > 30 and timer_animation < 45:
         text_y_pos = text_y_pos+5
     elif text_y_pos == posorigin-5 and timer_animation > 45:
         text_y_pos = text_y_pos+5
-    elif timer_animation>= 60:
+    elif timer_animation > 60:
         timer_animation = 0
     return timer_animation, text_y_pos
 
@@ -946,7 +946,7 @@ tiempo_admin = 30
 tiempo = tiempo_admin
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
-
+gaming = False
 # Ingreso de usuarios
 usuario_input=""
 password_input=""
@@ -1028,21 +1028,21 @@ while True:
             pygame.quit()
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if guess1_button.collidepoint(event.pos):
+            if guess1_button.collidepoint(event.pos) and gaming == True:
                 exitosas = exitosas + tr1 # -1 es igual a + (-1)
                 NLogo+=1
                 lugar,lugar2,lugar3 = randomizer(NLogo)
                 tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
                 Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
                 tiempo = tiempo_admin
-            elif guess2_button.collidepoint(event.pos):
+            elif guess2_button.collidepoint(event.pos) and gaming == True:
                 exitosas = exitosas + tr2 # -1 es igual a + (-1)
                 NLogo+=1
                 lugar,lugar2,lugar3 = randomizer(NLogo)
                 tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
                 Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
                 tiempo = tiempo_admin
-            elif guess3_button.collidepoint(event.pos):
+            elif guess3_button.collidepoint(event.pos) and gaming == True:
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
                 NLogo+=1
                 lugar,lugar2,lugar3 = randomizer(NLogo)
@@ -1230,6 +1230,7 @@ while True:
             mostrar=False
 
         if level == 1:
+            gaming = True
             if exitosas < Cantidad_Logos_Admin*1 and NLogo<Cantidad_Logos_Admin*1:
                 imagen,opcion = imageChoice(ListaNivel1, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
@@ -1291,6 +1292,7 @@ while True:
                 level += 1
 
         elif level == 2:
+            gaming = True
             if exitosas < Cantidad_Logos_Admin*2 and NLogo<Cantidad_Logos_Admin*2:
                 imagen,opcion = imageChoice(ListaNivel2, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel1,lugar,lugar2,lugar3)
@@ -1352,6 +1354,7 @@ while True:
                 level += 1
 
         elif level == 3:
+            gaming = True
             if exitosas < Cantidad_Logos_Admin*3 and NLogo<Cantidad_Logos_Admin*3:
                 imagen,opcion = imageChoice(ListaNivel3, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel3,lugar,lugar2,lugar3)
@@ -1413,6 +1416,7 @@ while True:
                 level += 1
 
         elif level == 4:
+            gaming = True
             if exitosas < Cantidad_Logos_Admin*4 and NLogo<Cantidad_Logos_Admin*4:
                 imagen,opcion = imageChoice(ListaNivel4, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel4,lugar,lugar2,lugar3)
@@ -1474,6 +1478,7 @@ while True:
                 level += 1
 
         elif level == 5:
+            gaming = True
             if exitosas < Cantidad_Logos_Admin*5 and NLogo<Cantidad_Logos_Admin*5:
                 imagen,opcion = imageChoice(ListaNivel5, NLogo)
                 guess1,guess2,guess3,tr1,tr2,tr3 = textoRandomizador(opcion,ListaNivel5,lugar,lugar2,lugar3)
@@ -1534,7 +1539,14 @@ while True:
                 NLogo=0
                 level += 1
         else:
+            gaming = False
             screen.blit(FondoVictoria, (0,0))
+            victory_text = Font_Daydream_100.render("Ganaste",False,(252, 186, 3))
+            victory_text_shadow = Font_Daydream_100.render("Ganaste",False,(186, 137, 0))
+            varposicional=400
+            timer_animation, varposicional = animaciones(timer_animation, varposicional, posorigin=400)
+            screen.blit(victory_text_shadow,(400,varposicional+5))
+            screen.blit(victory_text,(400,varposicional))
 
     pygame.display.update()
     clock.tick(60)

@@ -11,6 +11,13 @@ import random
 import time
 import math
 #--------------------------------[Funciones]--------------------------------#
+
+'''
+Función: Se encarga de cambiar el valor y del logo mostrado
+Entradas: timer
+Salidas:
+Restricciones:
+'''
 def animacionLogo(timer_animation,text_y_pos):
     timer_animation += 1
     if text_y_pos == 70 and timer_animation < 15:
@@ -24,7 +31,12 @@ def animacionLogo(timer_animation,text_y_pos):
     elif timer_animation >= 60:
         timer_animation = 0
     return timer_animation, text_y_pos
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def animaciones(timer_animation,text_y_pos,posorigin):
     timer_animation += 1
     if text_y_pos == posorigin and timer_animation < 15:
@@ -38,13 +50,23 @@ def animaciones(timer_animation,text_y_pos,posorigin):
     elif timer_animation > 60:
         timer_animation = 0
     return timer_animation, text_y_pos
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def imageChoice(Lista,i):
     imagen_oculta = Lista[i][1]
     text_oculto = Lista[i][2]
 
     return imagen_oculta, text_oculto
-
+'''
+Función: TextoRandomizador
+Entradas: Recibe la opción correcta, 
+Salidas:
+Restricciones:
+'''
 def textoRandomizador(opcion,Lista,lugar,lugar2,lugar3):
     if lugar == 1:
         guess1 = opcion
@@ -68,7 +90,12 @@ def textoRandomizador(opcion,Lista,lugar,lugar2,lugar3):
         tr2 = -1
         tr3 = 1
     return guess1,guess2,guess3,tr1,tr2,tr3
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def randomizer(exitosas):
     lugar = random.randint(1,3)
     lugar2 = random.randint(0,8)
@@ -77,14 +104,24 @@ def randomizer(exitosas):
         lugar2 = random.randint(0,8)
         lugar3 = random.randint(0,8)
     return lugar,lugar2,lugar3
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def GuardarTiempos(tiempoanterior,tiempo):
     tiempo_admin
     if tiempoanterior==0:
         return tiempo_admin-tiempo
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
-    
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''   
 def cargarusuarios(USUARIOS):
     with open("archivos/allusers","r") as allusers:
         usersList=allusers.read().split("\n")
@@ -92,7 +129,12 @@ def cargarusuarios(USUARIOS):
         USUARIOS[usersList[i]]=usersList[i+1]
     return USUARIOS
 
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
     print("llamando agregarNuevoUsuario")
     print(USUARIOS)
@@ -123,7 +165,12 @@ def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
     #def Leaderboard_Tiempos():
 
         #return tiempo1,tiempo2,tiempo3,tiempo4,tiempo5,tiempo6
-
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,tiemposLogos):
     print("llamando guardarInfoUsuario")
     with open("archivos/all_users/"+str(usuario_input.lower()),'w+') as user_info:
@@ -134,7 +181,12 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedi
         user_info.write((str(promedio)))
         for i in range(len(tiemposLogos)):
             user_info.write("\n"+str(tiemposLogos[i]))
-        
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''       
 def cargarInfoUsuario(exitosas,tiempototal,promedio,Lista_Niveles):
     print("llamando cargarInfoUsuario")
     with open("archivos/all_users/"+str(usuario_input.lower()),'r+') as user_info:
@@ -151,9 +203,13 @@ def cargarInfoUsuario(exitosas,tiempototal,promedio,Lista_Niveles):
 
     infoUsuarioList=[infoUsuario,tiempoPorLogoFalse]
     return infoUsuarioList
-        
-        
-
+          
+'''
+Función:
+Entradas:
+Salidas:
+Restricciones:
+'''
 def mostrarInfoUsuario():
     print("llamando mostrarInfoUsuario")
     print("usuario:  ", usuario_input.lower())

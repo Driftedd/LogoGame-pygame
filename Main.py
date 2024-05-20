@@ -1,3 +1,9 @@
+# Taller de Computación - Grupo: 40
+# Javier Mauricio Vega Abarca - 2024084468
+# Steven David Loaíciga Segura - 2024214083
+# Lun Valverde Villalobos - 2024080542
+# Josué Meza Solano 2024240640
+
 #--------------------------------[Imports]--------------------------------#
 import pygame
 import sys
@@ -114,7 +120,10 @@ def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
     else:
         print("usuario ya registrado")
 
-            
+    #def Leaderboard_Tiempos():
+
+        #return tiempo1,tiempo2,tiempo3,tiempo4,tiempo5,tiempo6
+
 def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,tiemposLogos):
     print("llamando guardarInfoUsuario")
     with open("archivos/all_users/"+str(usuario_input.lower()),'w+') as user_info:

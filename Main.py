@@ -13,10 +13,10 @@ import math
 #--------------------------------[Funciones]--------------------------------#
 
 '''
-Función: Se encarga de cambiar el valor y del logo mostrado
-Entradas: timer
-Salidas:
-Restricciones:
+Función: Se encarga de cambiar el valor "y" del logo mostrado
+Entradas: timer, text_y_pos
+Salidas: timer, text_y_pos
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def animacionLogo(timer_animation,text_y_pos):
     timer_animation += 1
@@ -32,10 +32,10 @@ def animacionLogo(timer_animation,text_y_pos):
         timer_animation = 0
     return timer_animation, text_y_pos
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función: Se encarga de cambiar el valor "y" del objeto mostrado.
+Entradas: timer , text_y_pos, posorigin
+Salidas:  timer, text_y_pos
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def animaciones(timer_animation,text_y_pos,posorigin):
     timer_animation += 1
@@ -51,10 +51,10 @@ def animaciones(timer_animation,text_y_pos,posorigin):
         timer_animation = 0
     return timer_animation, text_y_pos
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función: imageChoice
+Entradas:La lista con las imagenes y un indice
+Salidas:Una tupla con una imagen y su string correspondiente
+Restricciones: 
 '''
 def imageChoice(Lista,i):
     imagen_oculta = Lista[i][1]
@@ -62,10 +62,10 @@ def imageChoice(Lista,i):
 
     return imagen_oculta, text_oculto
 '''
-Función: TextoRandomizador
-Entradas: Recibe la opción correcta, 
-Salidas:
-Restricciones:
+Función: Se encarga de randomizar las opciones para adivinar el logo.
+Entradas: Lista con el nombre de la marca.
+Salidas: 6 variables para asignar puntos y opciones incorrectas y correcta.
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def textoRandomizador(opcion,Lista,lugar,lugar2,lugar3):
     if lugar == 1:
@@ -91,10 +91,10 @@ def textoRandomizador(opcion,Lista,lugar,lugar2,lugar3):
         tr3 = 1
     return guess1,guess2,guess3,tr1,tr2,tr3
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función:randomizer
+Entradas:Número de logos exitosos del nivel
+Salidas:retorna una tupla con 3 strings colocados en las distintas posiciones
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def randomizer(exitosas):
     lugar = random.randint(1,3)
@@ -105,10 +105,10 @@ def randomizer(exitosas):
         lugar3 = random.randint(0,8)
     return lugar,lugar2,lugar3
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función:GuardarTiempos
+Entradas:tiempoanterior,tiempo
+Salidas:El tiempo total tardado en un logo
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def GuardarTiempos(tiempoanterior,tiempo):
     tiempo_admin
@@ -117,11 +117,11 @@ def GuardarTiempos(tiempoanterior,tiempo):
     elif tiempoanterior != 0:
         return tiempoanterior + (tiempo_admin-tiempo)
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
-'''   
+Función: cargarusuarios
+Entradas:Usuarios
+Salidas:Un usuario existente
+Restricciones: N/A, no hay interacción con el usuario.
+''' 
 def cargarusuarios(USUARIOS):
     with open("archivos/allusers","r") as allusers:
         usersList=allusers.read().split("\n")
@@ -130,10 +130,10 @@ def cargarusuarios(USUARIOS):
     return USUARIOS
 
 '''
-Función:
-Entradas:
-Salidas:
-Restricciones:
+Función:agregarNuevoUsuario
+Entradas:El str del usuario, la contraseña y la lista total de usuarios
+Salidas:La lista total de usuarios con el nuevo usuario y contraseña añadido
+Restricciones: N/A, no hay interacción con el usuario.
 '''
 def agregarNuevoUsuario(usuario_input, password_input, USUARIOS):
     print("llamando agregarNuevoUsuario")
@@ -186,12 +186,12 @@ def cargarInfoUsuario():
     print("llamando cargarInfoUsuario")
     with open("archivos/all_users/"+str(usuario_input.lower()),'r+') as user_info:
         user_info_list=user_info.read().split("\n")
-    exitosas=user_info_list[2]
+    exitosas=int(user_info_list[2])
     tiempoPorLogo=user_info_list[3:]
     contador=0
     for e in range(len(Lista_Niveles)): #5 veces
         for i in range (len(Lista_Niveles[e])): #se repite la cantidad de veces de cada nivel
-            Lista_Niveles[e][i][3]=tiempoPorLogo[contador]
+            Lista_Niveles[e][i][3]=int(tiempoPorLogo[contador])
             contador+=1
     return [exitosas,Lista_Niveles]
         

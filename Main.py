@@ -171,7 +171,7 @@ Entradas:
 Salidas:
 Restricciones:
 '''
-def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,tiemposLogos):
+def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,Lista_Niveles):
     print("llamando guardarInfoUsuario")
     with open("archivos/all_users/"+str(usuario_input.lower()),'w+') as user_info:
         user_info.write(usuario_input.lower()+"\n")
@@ -179,8 +179,9 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedi
         user_info.write(str(exitosas)+"\n")
         user_info.write(str(tiempototal)+"\n")
         user_info.write((str(promedio)))
-        for i in range(len(tiemposLogos)):
-            user_info.write("\n"+str(tiemposLogos[i]))
+        for e in range(len(Lista_Niveles)):
+            for i in range(len(Lista_Niveles[e])):
+                user_info.write("\n"+str(Lista_Niveles[e][i][3]))
 '''
 Función:
 Entradas:
@@ -192,17 +193,24 @@ def cargarInfoUsuario(exitosas,tiempototal,promedio,Lista_Niveles):
     with open("archivos/all_users/"+str(usuario_input.lower()),'r+') as user_info:
         user_info_list=user_info.read().split("\n")
     print(user_info_list)
-    
-    exitosas=int(user_info_list[2])
-    tiempototal=0
-    promedio=0
-    
     infoUsuario=[exitosas,tiempototal,promedio]
-    tiempoPorLogoFalse=user_info_list[5:]
+    tiempoPorLogo=user_info_list[5:]
+    print(tiempoPorLogo)
+        
+    print("lista niveles sin cambiar\n", Lista_Niveles)
     
+    contador=0
+    print("lenLISTANIVELES:",len(Lista_Niveles))
+    for e in range(len(Lista_Niveles)): #5 veces
+        for i in range (len(Lista_Niveles[e])): #se repite la cantidad de veces de cada nivel
+            Lista_Niveles[e][i][3]=tiempoPorLogo[contador]
+            contador+=1
 
-    infoUsuarioList=[infoUsuario,tiempoPorLogoFalse]
+    print("lista niveles cambiada\n", Lista_Niveles)
+
+    infoUsuarioList=[infoUsuario,Lista_Niveles]
     return infoUsuarioList
+        
           
 '''
 Función:
@@ -1143,7 +1151,7 @@ while True:
         if event.type == pygame.QUIT:
             print("OPERACION TERMINADA")
             if USER=="user":
-                guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,tiemposLogos)
+                guardarInfoUsuario(usuario_input,password_input,exitosas,tiempototal,promedio,Lista_Niveles)
                 mostrarInfoUsuario()
             pygame.quit()
             exit()
@@ -1247,6 +1255,20 @@ while True:
                 USER = "START"
 
     elif USER == "Leaderboard_Self":
+        if mostrar==True:
+            #cambiar estas dos luego
+            tiempototal=0
+            promedio=0
+            print('info sin cargar')
+            mostrarInfoUsuario()
+            infoUsuarioList=cargarInfoUsuario(exitosas,tiempototal,promedio, Lista_Niveles)
+            exitosas=infoUsuarioList[0][0]
+            tiempototal=infoUsuarioList[0][1]
+            promedio=infoUsuarioList[0][2]
+            Lista_Niveles=infoUsuarioList[1]
+            print('info cargada')
+            mostrarInfoUsuario()
+            mostrar=False
         screen.blit(selfleaderboard_background,(0,0))
         screen.blit(leaderboard_title,(540,50))
         screen.blit(Play,(650,800))
@@ -1357,21 +1379,6 @@ while True:
                 Cantidad_Logos_Admin=Cantidad_Logos_Admin-1
    
     else:
-        if mostrar==True:
-            #cambiar estas dos luego
-            tiempototal=0
-            promedio=0
-            print('info sin cargar')
-            mostrarInfoUsuario()
-            infoUsuarioList=cargarInfoUsuario(exitosas,tiempototal,promedio, Lista_Niveles)
-            exitosas=infoUsuarioList[0][0]
-            tiempototal=infoUsuarioList[0][1]
-            promedio=infoUsuarioList[0][2]
-            tiemposLogos=infoUsuarioList[1]
-            #Lista_Niveles=
-            print('info cargada')
-            mostrarInfoUsuario()
-            mostrar=False
 
         if level == 1:
             gaming = True

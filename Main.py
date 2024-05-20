@@ -168,6 +168,8 @@ Font_Daydream_20 = pygame.font.Font("Media/Font_Daydream.ttf", 20)
 Font_Daydream_30 = pygame.font.Font("Media/Font_Daydream.ttf", 30)
 Font_Daydream_50 = pygame.font.Font("Media/Font_Daydream.ttf", 50)
 Font_Daydream_100 = pygame.font.Font("Media/Font_Daydream.ttf", 100)
+Font_Empire_80 = pygame.font.Font("Media/Font_Empire.ttf", 80)
+Font_Empire_40 = pygame.font.Font("Media/Font_Empire.ttf", 40)
 Font_Minecraft = pygame.font.Font("Media/Font_Minecraft.ttf",50)
 text_x_pos = 230
 text_y_pos = 70
@@ -311,6 +313,16 @@ michelin = pygame.image.load("Media/Marcas/Nivel5/michelin.png").convert_alpha()
 numar = pygame.image.load("Media/Marcas/Nivel5/numar.png").convert_alpha()
 oralB = pygame.image.load("Media/Marcas/Nivel5/oralB.png").convert_alpha()
 oreo = pygame.image.load("Media/Marcas/Nivel5/oreo.png").convert_alpha()
+palmolive = pygame.image.load("Media/Marcas/Nivel5/palmolive.png").convert_alpha()
+pampers = pygame.image.load("Media/Marcas/Nivel5/pampers.png").convert_alpha()
+panasonic = pygame.image.load("Media/Marcas/Nivel5/panasonic.png").convert_alpha()
+papajohns = pygame.image.load("Media/Marcas/Nivel5/papajohns.png").convert_alpha()
+paypal = pygame.image.load("Media/Marcas/Nivel5/paypal.png").convert_alpha()
+pepto = pygame.image.load("Media/Marcas/Nivel5/pepto.png").convert_alpha()
+pinterest = pygame.image.load("Media/Marcas/Nivel5/pinterest.png").convert_alpha()
+redbull = pygame.image.load("Media/Marcas/Nivel5/redbull.png").convert_alpha()
+salsol = pygame.image.load("Media/Marcas/Nivel5/salsol.png").convert_alpha()
+steam = pygame.image.load("Media/Marcas/Nivel5/steam.png").convert_alpha()
 subway = pygame.image.load("Media/Marcas/Nivel5/subway.png").convert_alpha()
 swim = pygame.image.load("Media/Marcas/Nivel5/swim.png").convert_alpha()
 ups = pygame.image.load("Media/Marcas/Nivel5/ups.png").convert_alpha()
@@ -458,6 +470,16 @@ michelin_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/micheli
 numar_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/numar.png").convert_alpha()
 oralB_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/oralB.png").convert_alpha()
 oreo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/oreo.png").convert_alpha()
+palmolive_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/palmolive.png").convert_alpha()
+pampers_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/pampers.png").convert_alpha()
+panasonic_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/panasonic.png").convert_alpha()
+papajohns_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/papajohns.png").convert_alpha()
+paypal_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/paypal.png").convert_alpha()
+pepto_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/pepto.png").convert_alpha()
+pinterest_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/pinterest.png").convert_alpha()
+redbull_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/redbull.png").convert_alpha()
+salsol_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/salsol.png").convert_alpha()
+steam_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/steam.png").convert_alpha()
 subway_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/subway.png").convert_alpha()
 swim_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/swim.png").convert_alpha()
 ups_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/ups.png").convert_alpha()
@@ -466,7 +488,6 @@ visa_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/visa.png").
 walmart_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/walmart.png").convert_alpha()
 whatsapp_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/whatsapp.png").convert_alpha()
 yamaha_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/yamaha.png").convert_alpha()
-
 # Strings Nivel1
 BurgerKing_str = "BurgerKing"
 starbucks_str = "Starbucks" 
@@ -606,6 +627,16 @@ michelin_str="Michelin"
 numar_str="Numar"
 oralB_str="Oral B"
 oreo_str="Oreo"
+palmolive_str = "Palmolive"
+pampers_str = "Pampers"
+panasonic_str = "Panasonic"
+papajohns_str = "Papa Johns"
+paypal_str = "Paypal"
+pepto_str = "PeptoBismol"
+pinterest_str = "Pinterest"
+redbull_str = "RedBull"
+salsol_str = "SalSol"
+steam_str = "Steam"
 subway_str="Subway"
 swim_str="Swim"
 ups_str="Ups"
@@ -761,7 +792,16 @@ visa_TiempoTardado = 0
 walmart_TiempoTardado = 0
 whatsapp_TiempoTardado = 0
 yamaha_TiempoTardado = 0
-
+palmolive_TiempoTardado = 0
+pampers_TiempoTardado = 0
+panasonic_TiempoTardado = 0
+papajohns_TiempoTardado = 0
+paypal_TiempoTardado = 0
+pepto_TiempoTardado = 0
+pinterest_TiempoTardado = 0
+redbull_TiempoTardado = 0
+salsol_TiempoTardado = 0
+steam_TiempoTardado = 0
 
 # Setup
 ListaNivel1=[
@@ -911,6 +951,16 @@ ListaNivel5=[
     [numar,numar_incompleto,numar_str,numar_TiempoTardado],
     [oralB,oralB_incompleto,oralB_str,oralB_TiempoTardado],
     [oreo,oreo_incompleto,oreo_str,oreo_TiempoTardado],
+    [palmolive,palmolive_incompleto,palmolive_str,palmolive_TiempoTardado],
+    [pampers,pampers_incompleto,pampers_str,pampers_TiempoTardado],
+    [panasonic,panasonic_incompleto,panasonic_str,panasonic_TiempoTardado],
+    [papajohns,papajohns_incompleto,papajohns_str,papajohns_TiempoTardado],
+    [paypal,paypal_incompleto,paypal_str,paypal_TiempoTardado],
+    [pepto,pepto_incompleto,pepto_str,pepto_TiempoTardado],
+    [pinterest,pinterest_incompleto,pinterest_str,pinterest_TiempoTardado],
+    [redbull,redbull_incompleto,redbull_str,redbull_TiempoTardado],
+    [salsol,salsol_incompleto,salsol_str,salsol_TiempoTardado],
+    [steam,steam_incompleto,steam_str,steam_TiempoTardado],
     [subway,subway_incompleto,subway_str,subway_TiempoTardado],
     [swim,swim_incompleto,swim_str,swim_TiempoTardado],
     [ups,ups_incompleto,ups_str,ups_TiempoTardado],
@@ -921,7 +971,6 @@ ListaNivel5=[
     [yamaha,yamaha_incompleto,yamaha_str,yamaha_TiempoTardado]
 ]
 random.shuffle(ListaNivel5)
-
 Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
               
 Fondo = pygame.image.load("Media/Fondo.png").convert()
@@ -947,6 +996,10 @@ tiempo = tiempo_admin
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 gaming = False
+leaderboard_icon=pygame.image.load("Media/Trofeo.png").convert_alpha()
+leaderboard_title=Font_Empire_80.render("Leaderboard",False,"White")
+leaderboard_background=pygame.image.load("Media/FondoLeaderboard.png").convert_alpha()
+selfleaderboard_background=pygame.image.load("Media/FondoLeaderboard_Self.png").convert_alpha()
 # Ingreso de usuarios
 usuario_input=""
 password_input=""
@@ -965,6 +1018,8 @@ noEncontrado_text=Font_Daydream_20.render("Usuario no encontrado!",False,("red")
 crear_text=Font_Daydream_50.render("CREAR  USUARIO",False,(5, 150, 131))
 crearUsuario_text=Font_Daydream_20.render("Crear  usuario",False,(5, 150, 131))
 regresar_text=Font_Daydream_20.render("Regresar",False,(5, 150, 131))
+leaderboard_regresar=Font_Empire_40.render("Regresar",False,"White")
+Play=Font_Daydream_50.render("Jugar",False,"Green")
 creacionUsuario_button=pygame.Rect(770,700,295,40)
 regresar_button=pygame.Rect(50,686,195,40)
 crearUsuario_real=pygame.Rect(360,450,275,40)
@@ -1072,8 +1127,14 @@ while True:
             colour2=pygame.Color(0,42,210)
         else:
             colour2=pygame.Color(20,30,70,255)
+        pygame.Rect(1500,100,60,60)
+        leaderboard_button=pygame.draw.rect(screen,(245, 237, 169), pygame.Rect(1500, 30, 52, 52),  2, 3)
+        screen.blit(leaderboard_icon, (1502,32))
         pygame.draw.rect(screen,colour1,textbox_usuario,0)
         pygame.draw.rect(screen,colour2,textbox_password,0)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if leaderboard_button.collidepoint(event.pos) and gaming == False:
+                USER = "Leaderboard_General"
         surface1=Font_Daydream_30.render(usuario_input,True,"white")
         surface2=Font_Daydream_30.render(password_input,True,"white")
         screen.blit(ingreso_text,(80,85))
@@ -1085,7 +1146,6 @@ while True:
         screen.blit(crearUsuario_text,(creacionUsuario_button.x,creacionUsuario_button.y))
         usuario_input=usuario_input.lower()
         password_input=password_input.lower()
-        
         if event.type == pygame.MOUSEBUTTONDOWN:
             if ingresar_button.collidepoint(event.pos):
                 usuario_input=usuario_input.lower()
@@ -1094,7 +1154,7 @@ while True:
                         USER=usuario_input
                 elif usuario_input in USUARIOS:
                     if password_input==USUARIOS[usuario_input]:
-                        USER="user"
+                        USER="Leaderboard_Self"
                     elif password_input!=USUARIOS[usuario_input]:
                         screen.blit(wrongPw_text,(ingresar_button.x-120,ingresar_button.y+45))
                 elif usuario_input not in USUARIOS:
@@ -1111,7 +1171,26 @@ while True:
             else:
                 active_user=False
                 active_pw=False
-                
+
+    elif USER=="Leaderboard_General":
+        screen.blit(leaderboard_background,(0,0))
+        screen.blit(leaderboard_title,(540,50))
+        screen.blit(leaderboard_regresar,(20,800))
+        leaderboard_regresar_button= pygame.Rect(20,790,200,60)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if leaderboard_regresar_button.collidepoint(event.pos) and gaming == False:
+                USER = "START"
+
+    elif USER == "Leaderboard_Self":
+        screen.blit(selfleaderboard_background,(0,0))
+        screen.blit(leaderboard_title,(540,50))
+        screen.blit(Play,(650,800))
+        selflead_play= pygame.Rect(640,790,280,70)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if selflead_play.collidepoint(event.pos) and gaming == False:
+                USER = "s"
+
+
     elif USER=="CrearUsuario":
         screen.blit(Fondo,(0,0))
         screen.blit(crear_text,(180,85))
@@ -1174,7 +1253,7 @@ while True:
                 active_user=False
                 active_pw=False
 
-    elif USER=="admin":        
+    elif USER=="admin":      
         password_input=""
         usuario_input=""
         screen.blit(Fondo,(0,0))

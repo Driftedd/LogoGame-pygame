@@ -80,69 +80,151 @@ text_y_pos = 70
 
 # Logos completos:
 # 1
-Pepsi = pygame.image.load("Media/Marcas/Nivel 1/pepsi.png").convert_alpha()
-McDonalds = pygame.image.load("Media/Marcas/Nivel 1/mcdonalds.png").convert_alpha()
-BurgerKing = pygame.image.load("Media/Marcas/Nivel 1/burger-king.png").convert_alpha()
-logitech = pygame.image.load("Media/Marcas/Nivel 1/logitech.png").convert_alpha()
-spotify = pygame.image.load("Media/Marcas/Nivel 1/spotify.png").convert_alpha()
-starbucks = pygame.image.load("Media/Marcas/Nivel 1/starbucks.png").convert_alpha()
-youtube = pygame.image.load("Media/Marcas/Nivel 1/youtube.png").convert_alpha()
-python = pygame.image.load("Media/Marcas/Nivel 1/python.png").convert_alpha()
-apple = pygame.image.load("Media/Marcas/Nivel 1/apple.png").convert_alpha()
-_3m = pygame.image.load("Media/Marcas/Nivel 1/3m.png").convert_alpha()
+Pepsi = pygame.image.load("Media/Marcas/Nivel1/pepsi.png").convert_alpha()
+McDonalds = pygame.image.load("Media/Marcas/Nivel1/mcdonalds.png").convert_alpha()
+BurgerKing = pygame.image.load("Media/Marcas/Nivel1/burger-king.png").convert_alpha()
+logitech = pygame.image.load("Media/Marcas/Nivel1/logitech.png").convert_alpha()
+spotify = pygame.image.load("Media/Marcas/Nivel1/spotify.png").convert_alpha()
+starbucks = pygame.image.load("Media/Marcas/Nivel1/starbucks.png").convert_alpha()
+youtube = pygame.image.load("Media/Marcas/Nivel1/youtube.png").convert_alpha()
+python = pygame.image.load("Media/Marcas/Nivel1/python.png").convert_alpha()
+apple = pygame.image.load("Media/Marcas/Nivel1/apple.png").convert_alpha()
+_3m = pygame.image.load("Media/Marcas/Nivel1/3m.png").convert_alpha()
 # 2
-_7up = pygame.image.load("Media/Marcas/Nivel 2/7up.png").convert_alpha()
-adidas = pygame.image.load("Media/Marcas/Nivel 2/adidas.png").convert_alpha()
-amazon = pygame.image.load("Media/Marcas/Nivel 2/amazon.png").convert_alpha()
-bmw = pygame.image.load("Media/Marcas/Nivel 2/bmw.png").convert_alpha()
-duckduckgo = pygame.image.load("Media/Marcas/Nivel 2/duckduckgo.png").convert_alpha()
-ea = pygame.image.load("Media/Marcas/Nivel 2/ea.png").convert_alpha()
-fanta = pygame.image.load("Media/Marcas/Nivel 2/fanta.png").convert_alpha()
-hasbro = pygame.image.load("Media/Marcas/Nivel 2/hasbro.png").convert_alpha()
-jacks = pygame.image.load("Media/Marcas/Nivel 2/jacks.png").convert_alpha()
-kfc = pygame.image.load("Media/Marcas/Nivel 2/kfc.png").convert_alpha()
-lego = pygame.image.load("Media/Marcas/Nivel 2/lego.png").convert_alpha()
-monster = pygame.image.load("Media/Marcas/Nivel 2/monster.png").convert_alpha()
-netflix = pygame.image.load("Media/Marcas/Nivel 2/netflix.png").convert_alpha()
-nfl = pygame.image.load("Media/Marcas/Nivel 2/nfl.png").convert_alpha()
-jrockets = pygame.image.load("Media/Marcas/Nivel 2/rockets.png").convert_alpha()
-sega = pygame.image.load("Media/Marcas/Nivel 2/sega.png").convert_alpha()
-spacex = pygame.image.load("Media/Marcas/Nivel 2/space.png").convert_alpha()
-utorrent = pygame.image.load("Media/Marcas/Nivel 2/torrent.png").convert_alpha()
-tosty = pygame.image.load("Media/Marcas/Nivel 2/tosty.png").convert_alpha()
-vscode = pygame.image.load("Media/Marcas/Nivel 2/vscode.png").convert_alpha()
+_7up = pygame.image.load("Media/Marcas/Nivel2/7up.png").convert_alpha()
+adidas = pygame.image.load("Media/Marcas/Nivel2/adidas.png").convert_alpha()
+amazon = pygame.image.load("Media/Marcas/Nivel2/amazon.png").convert_alpha()
+bmw = pygame.image.load("Media/Marcas/Nivel2/bmw.png").convert_alpha()
+duckduckgo = pygame.image.load("Media/Marcas/Nivel2/duckduckgo.png").convert_alpha()
+ea = pygame.image.load("Media/Marcas/Nivel2/ea.png").convert_alpha()
+fanta = pygame.image.load("Media/Marcas/Nivel2/fanta.png").convert_alpha()
+hasbro = pygame.image.load("Media/Marcas/Nivel2/hasbro.png").convert_alpha()
+jacks = pygame.image.load("Media/Marcas/Nivel2/jacks.png").convert_alpha()
+kfc = pygame.image.load("Media/Marcas/Nivel2/kfc.png").convert_alpha()
+lego = pygame.image.load("Media/Marcas/Nivel2/lego.png").convert_alpha()
+monster = pygame.image.load("Media/Marcas/Nivel2/monster.png").convert_alpha()
+netflix = pygame.image.load("Media/Marcas/Nivel2/netflix.png").convert_alpha()
+nfl = pygame.image.load("Media/Marcas/Nivel2/nfl.png").convert_alpha()
+jrockets = pygame.image.load("Media/Marcas/Nivel2/rockets.png").convert_alpha()
+sega = pygame.image.load("Media/Marcas/Nivel2/sega.png").convert_alpha()
+spacex = pygame.image.load("Media/Marcas/Nivel2/space.png").convert_alpha()
+utorrent = pygame.image.load("Media/Marcas/Nivel2/torrent.png").convert_alpha()
+tosty = pygame.image.load("Media/Marcas/Nivel2/tosty.png").convert_alpha()
+vscode = pygame.image.load("Media/Marcas/Nivel2/vscode.png").convert_alpha()
 
 # 3
-adobe = pygame.image.load("Media/Marcas/Nivel 3/adobe.png").convert_alpha()
-autodesk = pygame.image.load("Media/Marcas/Nivel 3/autodesk.png").convert_alpha()
-balance = pygame.image.load("Media/Marcas/Nivel 3/balance.png").convert_alpha()
-blackberry = pygame.image.load("Media/Marcas/Nivel 3/blackberry.png").convert_alpha()
-chevro = pygame.image.load("Media/Marcas/Nivel 3/chevro.png").convert_alpha()
-coke = pygame.image.load("Media/Marcas/Nivel 3/coke.png").convert_alpha()
-delMonte = pygame.image.load("Media/Marcas/Nivel 3/delMonte.png").convert_alpha()
-discord = pygame.image.load("Media/Marcas/Nivel 3/discord.png").convert_alpha()
-dreamworks = pygame.image.load("Media/Marcas/Nivel 3/dreamworks.png").convert_alpha()
-facebook = pygame.image.load("Media/Marcas/Nivel 3/facebook.png").convert_alpha()
-hulu = pygame.image.load("Media/Marcas/Nivel 3/hulu.png").convert_alpha()
-microsoft = pygame.image.load("Media/Marcas/Nivel 3/microsoft.png").convert_alpha()
-motorola = pygame.image.load("Media/Marcas/Nivel 3/motorola.png").convert_alpha()
-moyo = pygame.image.load("Media/Marcas/Nivel 3/moyo.png").convert_alpha()
-nascar = pygame.image.load("Media/Marcas/Nivel 3/nascar.png").convert_alpha()
-nike = pygame.image.load("Media/Marcas/Nivel 3/nike.png").convert_alpha()
-nintendo = pygame.image.load("Media/Marcas/Nivel 3/nintendo.png").convert_alpha()
-nissan = pygame.image.load("Media/Marcas/Nivel 3/nissan.png").convert_alpha()
-office = pygame.image.load("Media/Marcas/Nivel 3/office.png").convert_alpha()
-pyg = pygame.image.load("Media/Marcas/Nivel 3/p&g.png").convert_alpha()
-pizzahut = pygame.image.load("Media/Marcas/Nivel 3/pizzahut.png").convert_alpha()
-purina = pygame.image.load("Media/Marcas/Nivel 3/purina.png").convert_alpha()
-rayovac = pygame.image.load("Media/Marcas/Nivel 3/rayovac.png").convert_alpha()
-razer = pygame.image.load("Media/Marcas/Nivel 3/razer.png").convert_alpha()
-safari = pygame.image.load("Media/Marcas/Nivel 3/safari.png").convert_alpha()
-siman = pygame.image.load("Media/Marcas/Nivel 3/siman.png").convert_alpha()
-sprite = pygame.image.load("Media/Marcas/Nivel 3/sprite.png").convert_alpha()
-tacobell = pygame.image.load("Media/Marcas/Nivel 3/tacobell.png").convert_alpha()
-toyota = pygame.image.load("Media/Marcas/Nivel 3/toyota.png").convert_alpha()
-vlc = pygame.image.load("Media/Marcas/Nivel 3/vlc.png").convert_alpha()
+adobe = pygame.image.load("Media/Marcas/Nivel3/adobe.png").convert_alpha()
+autodesk = pygame.image.load("Media/Marcas/Nivel3/autodesk.png").convert_alpha()
+balance = pygame.image.load("Media/Marcas/Nivel3/balance.png").convert_alpha()
+blackberry = pygame.image.load("Media/Marcas/Nivel3/blackberry.png").convert_alpha()
+chevro = pygame.image.load("Media/Marcas/Nivel3/chevro.png").convert_alpha()
+coke = pygame.image.load("Media/Marcas/Nivel3/coke.png").convert_alpha()
+delMonte = pygame.image.load("Media/Marcas/Nivel3/delMonte.png").convert_alpha()
+discord = pygame.image.load("Media/Marcas/Nivel3/discord.png").convert_alpha()
+dreamworks = pygame.image.load("Media/Marcas/Nivel3/dreamworks.png").convert_alpha()
+facebook = pygame.image.load("Media/Marcas/Nivel3/facebook.png").convert_alpha()
+hulu = pygame.image.load("Media/Marcas/Nivel3/hulu.png").convert_alpha()
+microsoft = pygame.image.load("Media/Marcas/Nivel3/microsoft.png").convert_alpha()
+motorola = pygame.image.load("Media/Marcas/Nivel3/motorola.png").convert_alpha()
+moyo = pygame.image.load("Media/Marcas/Nivel3/moyo.png").convert_alpha()
+nascar = pygame.image.load("Media/Marcas/Nivel3/nascar.png").convert_alpha()
+nike = pygame.image.load("Media/Marcas/Nivel3/nike.png").convert_alpha()
+nintendo = pygame.image.load("Media/Marcas/Nivel3/nintendo.png").convert_alpha()
+nissan = pygame.image.load("Media/Marcas/Nivel3/nissan.png").convert_alpha()
+office = pygame.image.load("Media/Marcas/Nivel3/office.png").convert_alpha()
+pyg = pygame.image.load("Media/Marcas/Nivel3/p&g.png").convert_alpha()
+pizzahut = pygame.image.load("Media/Marcas/Nivel3/pizzahut.png").convert_alpha()
+purina = pygame.image.load("Media/Marcas/Nivel3/purina.png").convert_alpha()
+rayovac = pygame.image.load("Media/Marcas/Nivel3/rayovac.png").convert_alpha()
+razer = pygame.image.load("Media/Marcas/Nivel3/razer.png").convert_alpha()
+safari = pygame.image.load("Media/Marcas/Nivel3/safari.png").convert_alpha()
+siman = pygame.image.load("Media/Marcas/Nivel3/siman.png").convert_alpha()
+sprite = pygame.image.load("Media/Marcas/Nivel3/sprite.png").convert_alpha()
+tacobell = pygame.image.load("Media/Marcas/Nivel3/tacobell.png").convert_alpha()
+toyota = pygame.image.load("Media/Marcas/Nivel3/toyota.png").convert_alpha()
+vlc = pygame.image.load("Media/Marcas/Nivel3/vlc.png").convert_alpha()
+#4
+bimbo = pygame.image.load("Media/Marcas/Nivel4/bimbo.png").convert_alpha()
+colgate = pygame.image.load("Media/Marcas/Nivel4/colgate.png").convert_alpha()
+dell = pygame.image.load("Media/Marcas/Nivel4/dell.png").convert_alpha()
+dhl = pygame.image.load("Media/Marcas/Nivel4/dhl.png").convert_alpha()
+didi = pygame.image.load("Media/Marcas/Nivel4/didi.png").convert_alpha()
+disney = pygame.image.load("Media/Marcas/Nivel4/disney.png").convert_alpha()
+dominos = pygame.image.load("Media/Marcas/Nivel4/dominos.png").convert_alpha()
+doritos = pygame.image.load("Media/Marcas/Nivel4/doritos.png").convert_alpha()
+dospinos = pygame.image.load("Media/Marcas/Nivel4/dospinos.png").convert_alpha()
+gatorade = pygame.image.load("Media/Marcas/Nivel4/gatorade.png").convert_alpha()
+gog = pygame.image.load("Media/Marcas/Nivel4/gog.png").convert_alpha()
+google = pygame.image.load("Media/Marcas/Nivel4/google.png").convert_alpha()
+gucci = pygame.image.load("Media/Marcas/Nivel4/gucci.png").convert_alpha()
+gillette = pygame.image.load("Media/Marcas/Nivel4/gillette.png").convert_alpha()
+heineken = pygame.image.load("Media/Marcas/Nivel4/heineken.png").convert_alpha()
+imperial = pygame.image.load("Media/Marcas/Nivel4/imperial.png").convert_alpha()
+kellogs = pygame.image.load("Media/Marcas/Nivel4/kellogs.png").convert_alpha()
+kolbi = pygame.image.load("Media/Marcas/Nivel4/kolbi.png").convert_alpha()
+maggi = pygame.image.load("Media/Marcas/Nivel4/maggi.png").convert_alpha()
+mastercard = pygame.image.load("Media/Marcas/Nivel4/mastercard.png").convert_alpha()
+mattel = pygame.image.load("Media/Marcas/Nivel4/mattel.png").convert_alpha()
+maxi = pygame.image.load("Media/Marcas/Nivel4/maxi.png").convert_alpha()
+monopoly = pygame.image.load("Media/Marcas/Nivel4/monopoly.png").convert_alpha()
+motorola = pygame.image.load("Media/Marcas/Nivel4/motorola.png").convert_alpha()
+movistar = pygame.image.load("Media/Marcas/Nivel4/movistar.png").convert_alpha()
+nestle = pygame.image.load("Media/Marcas/Nivel4/nestle.png").convert_alpha()
+pali = pygame.image.load("Media/Marcas/Nivel4/pali.png").convert_alpha()
+pixar = pygame.image.load("Media/Marcas/Nivel4/pixar.png").convert_alpha()
+powerade = pygame.image.load("Media/Marcas/Nivel4/powerade.png").convert_alpha()
+pozuelo = pygame.image.load("Media/Marcas/Nivel4/pozuelo.png").convert_alpha()
+pringles = pygame.image.load("Media/Marcas/Nivel4/pringles.png").convert_alpha()
+rareware = pygame.image.load("Media/Marcas/Nivel4/rareware.png").convert_alpha()
+rexona = pygame.image.load("Media/Marcas/Nivel4/rexona.png").convert_alpha()
+riot = pygame.image.load("Media/Marcas/Nivel4/riot.png").convert_alpha()
+samsung = pygame.image.load("Media/Marcas/Nivel4/samsung.png").convert_alpha()
+scott = pygame.image.load("Media/Marcas/Nivel4/scott.png").convert_alpha()
+sony = pygame.image.load("Media/Marcas/Nivel4/sony.png").convert_alpha()
+tesla = pygame.image.load("Media/Marcas/Nivel4/tesla.png").convert_alpha()
+tigo = pygame.image.load("Media/Marcas/Nivel4/tigo.png").convert_alpha()
+uber = pygame.image.load("Media/Marcas/Nivel4/uber.png").convert_alpha()
+#5
+alka = pygame.image.load("Media/Marcas/Nivel5/alka.png").convert_alpha()
+amd = pygame.image.load("Media/Marcas/Nivel5/amd.png").convert_alpha()
+atyt = pygame.image.load("Media/Marcas/Nivel5/at&t.png").convert_alpha()
+bacardi = pygame.image.load("Media/Marcas/Nivel5/bacardi.png").convert_alpha()
+bandai = pygame.image.load("Media/Marcas/Nivel5/bandai.png").convert_alpha()
+bayer = pygame.image.load("Media/Marcas/Nivel5/bayer.png").convert_alpha()
+cacique = pygame.image.load("Media/Marcas/Nivel5/cacique.png").convert_alpha()
+carlsjr = pygame.image.load("Media/Marcas/Nivel5/carlsjr.png").convert_alpha()
+cdprojekt = pygame.image.load("Media/Marcas/Nivel5/cdprojekt.png").convert_alpha()
+chanel = pygame.image.load("Media/Marcas/Nivel5/chanel.png").convert_alpha()
+cisco = pygame.image.load("Media/Marcas/Nivel5/cisco.png").convert_alpha()
+claro = pygame.image.load("Media/Marcas/Nivel5/claro.png").convert_alpha()
+corvette = pygame.image.load("Media/Marcas/Nivel5/corvette.png").convert_alpha()
+daniels = pygame.image.load("Media/Marcas/Nivel5/daniels.png").convert_alpha()
+dos = pygame.image.load("Media/Marcas/Nivel5/dos.png").convert_alpha()
+ebay = pygame.image.load("Media/Marcas/Nivel5/ebay.png").convert_alpha()
+edge = pygame.image.load("Media/Marcas/Nivel5/edge.png").convert_alpha()
+fedex = pygame.image.load("Media/Marcas/Nivel5/fedex.png").convert_alpha()
+ferrari = pygame.image.load("Media/Marcas/Nivel5/ferrari.png").convert_alpha()
+ford = pygame.image.load("Media/Marcas/Nivel5/ford.png").convert_alpha()
+gmail = pygame.image.load("Media/Marcas/Nivel5/gmail.png").convert_alpha()
+huawei = pygame.image.load("Media/Marcas/Nivel5/huawei.png").convert_alpha()
+hyundai = pygame.image.load("Media/Marcas/Nivel5/hyundai.png").convert_alpha()
+intel = pygame.image.load("Media/Marcas/Nivel5/intel.png").convert_alpha()
+java = pygame.image.load("Media/Marcas/Nivel5/java.png").convert_alpha()
+_max = pygame.image.load("Media/Marcas/Nivel5/max.png").convert_alpha()
+mcdonalds_1953 = pygame.image.load("Media/Marcas/Nivel5/mcdonalds_1953.png").convert_alpha()
+mercedes = pygame.image.load("Media/Marcas/Nivel5/mercedes.png").convert_alpha()
+michelin = pygame.image.load("Media/Marcas/Nivel5/michelin.png").convert_alpha()
+numar = pygame.image.load("Media/Marcas/Nivel5/numar.png").convert_alpha()
+oralB = pygame.image.load("Media/Marcas/Nivel5/oralB.png").convert_alpha()
+oreo = pygame.image.load("Media/Marcas/Nivel5/oreo.png").convert_alpha()
+subway = pygame.image.load("Media/Marcas/Nivel5/subway.png").convert_alpha()
+swim = pygame.image.load("Media/Marcas/Nivel5/swim.png").convert_alpha()
+ups = pygame.image.load("Media/Marcas/Nivel5/ups.png").convert_alpha()
+valve = pygame.image.load("Media/Marcas/Nivel5/valve.png").convert_alpha()
+visa = pygame.image.load("Media/Marcas/Nivel5/visa.png").convert_alpha()
+walmart = pygame.image.load("Media/Marcas/Nivel5/walmart.png").convert_alpha()
+whatsapp = pygame.image.load("Media/Marcas/Nivel5/whatsapp.png").convert_alpha()
+yamaha = pygame.image.load("Media/Marcas/Nivel5/yamaha.png").convert_alpha()
 
 # Logos incompletos:
 # 1
@@ -208,6 +290,88 @@ sprite_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/sprite.pn
 tacobell_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/tacobell.png").convert_alpha()
 toyota_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/toyota.png").convert_alpha()
 vlc_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel3/vlc.png").convert_alpha()
+#4
+bimbo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/bimbo.png").convert_alpha()
+colgate_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/colgate.png").convert_alpha()
+dell_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/dell.png").convert_alpha()
+dhl_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/dhl.png").convert_alpha()
+didi_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/didi.png").convert_alpha()
+disney_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/disney.png").convert_alpha()
+dominos_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/dominos.png").convert_alpha()
+doritos_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/doritos.png").convert_alpha()
+dospinos_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/dospinos.png").convert_alpha()
+gatorade_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/gatorade.png").convert_alpha()
+gog_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/gog.png").convert_alpha()
+google_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/google.png").convert_alpha()
+gucci_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/gucci.png").convert_alpha()
+gillette_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/gillette.png").convert_alpha()
+heineken_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/heineken.png").convert_alpha()
+imperial_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/imperial.png").convert_alpha()
+kellogs_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/kellogs.png").convert_alpha()
+kolbi_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/kolbi.png").convert_alpha()
+maggi_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/maggi.png").convert_alpha()
+mastercard_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/mastercard.png").convert_alpha()
+mattel_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/mattel.png").convert_alpha()
+maxi_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/maxi.png").convert_alpha()
+monopoly_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/monopoly.png").convert_alpha()
+motorola_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/motorola.png").convert_alpha()
+movistar_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/movistar.png").convert_alpha()
+nestle_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/nestle.png").convert_alpha()
+pali_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/pali.png").convert_alpha()
+pixar_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/pixar.png").convert_alpha()
+powerade_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/powerade.png").convert_alpha()
+pozuelo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/pozuelo.png").convert_alpha()
+pringles_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/pringles.png").convert_alpha()
+rareware_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/rareware.png").convert_alpha()
+rexona_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/rexona.png").convert_alpha()
+riot_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/riot.png").convert_alpha()
+samsung_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/samsung.png").convert_alpha()
+scott_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/scott.png").convert_alpha()
+sony_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/sony.png").convert_alpha()
+tesla_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/tesla.png").convert_alpha()
+tigo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/tigo.png").convert_alpha()
+uber_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel4/uber.png").convert_alpha()
+#5
+alka_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/alka.png").convert_alpha()
+amd_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/amd.png").convert_alpha()
+atyt_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/at&t.png").convert_alpha()
+bacardi_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/bacardi.png").convert_alpha()
+bandai_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/bandai.png").convert_alpha()
+bayer_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/bayer.png").convert_alpha()
+cacique_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/cacique.png").convert_alpha()
+carlsjr_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/carlsjr.png").convert_alpha()
+cdprojekt_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/cdprojekt.png").convert_alpha()
+chanel_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/chanel.png").convert_alpha()
+cisco_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/cisco.png").convert_alpha()
+claro_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/claro.png").convert_alpha()
+corvette_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/corvette.png").convert_alpha()
+daniels_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/daniels.png").convert_alpha()
+dos_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/dos.png").convert_alpha()
+ebay_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/ebay.png").convert_alpha()
+edge_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/edge.png").convert_alpha()
+fedex_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/fedex.png").convert_alpha()
+ferrari_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/ferrari.png").convert_alpha()
+ford_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/ford.png").convert_alpha()
+gmail_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/gmail.png").convert_alpha()
+huawei_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/huawei.png").convert_alpha()
+hyundai_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/hyundai.png").convert_alpha()
+intel_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/intel.png").convert_alpha()
+java_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/java.png").convert_alpha()
+_max_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/max.png").convert_alpha()
+mcdonalds_1953_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/mcdonalds_1953.png").convert_alpha()
+mercedes_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/mercedes.png").convert_alpha()
+michelin_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/michelin.png").convert_alpha()
+numar_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/numar.png").convert_alpha()
+oralB_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/oralB.png").convert_alpha()
+oreo_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/oreo.png").convert_alpha()
+subway_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/subway.png").convert_alpha()
+swim_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/swim.png").convert_alpha()
+ups_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/ups.png").convert_alpha()
+valve_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/valve.png").convert_alpha()
+visa_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/visa.png").convert_alpha()
+walmart_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/walmart.png").convert_alpha()
+whatsapp_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/whatsapp.png").convert_alpha()
+yamaha_incompleto = pygame.image.load("Media/Marcas_Incompletas/Nivel5/yamaha.png").convert_alpha()
 
 # Strings Nivel1
 BurgerKing_str = "BurgerKing"
@@ -274,6 +438,88 @@ sprite_str = "Sprite"
 tacobell_str = "TacoBell"
 toyota_str = "Toyota"
 vlc_str = "VLC"
+#Strings Nivel 4
+bimbo_str="Bimbo"
+colgate_str="Colgate"
+dell_str="Dell"
+dhl_str="DHL"
+didi_str="DiDi"
+disney_str="Disney"
+dominos_str="Dominos"
+doritos_str="Doritos"
+dospinos_str="Dos Pinos"
+gatorade_str="Gatorade"
+gog_str="GoG"
+google_str="Google"
+gucci_str="Gucci"
+gillette_str="Gillette"
+heineken_str="Heineken"
+imperial_str="Imperial"
+kellogs_str="Kellogs"
+kolbi_str="Kolbi"
+maggi_str="Maggi"
+mastercard_str="MasterCard"
+mattel_str="Mattel"
+maxi_str="Maxi"
+monopoly_str="Monopoly"
+motorola_str="Motorola"
+movistar_str="Movistar"
+nestle_str="Nestle"
+pali_str="Pali"
+pixar_str="Pixar"
+powerade_str="Powerade"
+pozuelo_str="Pozuelo"
+pringles_str="Pringles"
+rareware_str="Rareware"
+rexona_str="Rexona"
+riot_str="Riot"
+samsung_str="Samsung"
+scott_str="Scott"
+sony_str="Sony"
+tesla_str="Tesla"
+tigo_str="Tigo"
+uber_str="Uber"
+#Strings Nivel 5
+alka_str="Alka-Seltzer"
+amd_str="AMD"
+atyt_str="AT&T"
+bacardi_str="Bacardi"
+bandai_str="Bandai"
+bayer_str="Bayer"
+cacique_str="Cacique"
+carlsjr_str="Carl's Jr."
+cdprojekt_str="CdProjekt"
+chanel_str="Chanel"
+cisco_str="Cisco"
+claro_str="Claro"
+corvette_str="Corvette"
+daniels_str="Jack Daniels"
+dos_str="Dos"
+ebay_str="Ebay"
+edge_str="Edge"
+fedex_str="FedEx"
+ferrari_str="Ferrari"
+ford_str="Ford"
+gmail_str="GMail"
+huawei_str="Huawei"
+hyundai_str="Hyundai"
+intel_str="Intel"
+java_str="Java"
+_max_str="Max"
+mcdonalds_1953_str="McDonald's Antiguo"
+mercedes_str="Mercedes"
+michelin_str="Michelin"
+numar_str="Numar"
+oralB_str="Oral B"
+oreo_str="Oreo"
+subway_str="Subway"
+swim_str="Swim"
+ups_str="Ups"
+valve_str="Valve"
+visa_str="Visa"
+walmart_str="Walmart"
+whatsapp_str="WhatsApp"
+yamaha_str="Yamaha"
 # Tiempos
 #1
 Pepsi_TiempoTardado = 0
@@ -339,8 +585,87 @@ tacobell_TiempoTardado = 0
 toyota_TiempoTardado = 0
 vlc_TiempoTardado = 0
 #4
-
+bimbo_TiempoTardado = 0
+colgate_TiempoTardado = 0
+dell_TiempoTardado = 0
+dhl_TiempoTardado = 0
+didi_TiempoTardado = 0
+disney_TiempoTardado = 0
+dominos_TiempoTardado = 0
+doritos_TiempoTardado = 0
+dospinos_TiempoTardado = 0
+gatorade_TiempoTardado = 0
+gog_TiempoTardado = 0
+google_TiempoTardado = 0
+gucci_TiempoTardado = 0
+gillette_TiempoTardado = 0
+heineken_TiempoTardado = 0
+imperial_TiempoTardado = 0
+kellogs_TiempoTardado = 0
+kolbi_TiempoTardado = 0
+maggi_TiempoTardado = 0
+mastercard_TiempoTardado = 0
+mattel_TiempoTardado = 0
+maxi_TiempoTardado = 0
+monopoly_TiempoTardado = 0
+motorola_TiempoTardado = 0
+movistar_TiempoTardado = 0
+nestle_TiempoTardado = 0
+pali_TiempoTardado = 0
+pixar_TiempoTardado = 0
+powerade_TiempoTardado = 0
+pozuelo_TiempoTardado = 0
+pringles_TiempoTardado = 0
+rareware_TiempoTardado = 0
+rexona_TiempoTardado = 0
+riot_TiempoTardado = 0
+samsung_TiempoTardado = 0
+scott_TiempoTardado = 0
+sony_TiempoTardado = 0
+tesla_TiempoTardado = 0
+tigo_TiempoTardado = 0
+uber_TiempoTardado = 0
 #5
+alka_TiempoTardado = 0
+amd_TiempoTardado = 0
+atyt_TiempoTardado = 0
+bacardi_TiempoTardado = 0
+bandai_TiempoTardado = 0
+bayer_TiempoTardado = 0
+cacique_TiempoTardado = 0
+carlsjr_TiempoTardado = 0
+cdprojekt_TiempoTardado = 0
+chanel_TiempoTardado = 0
+cisco_TiempoTardado = 0
+claro_TiempoTardado = 0
+corvette_TiempoTardado = 0
+daniels_TiempoTardado = 0
+dos_TiempoTardado = 0
+ebay_TiempoTardado = 0
+edge_TiempoTardado = 0
+fedex_TiempoTardado = 0
+ferrari_TiempoTardado = 0
+ford_TiempoTardado = 0
+gmail_TiempoTardado = 0
+huawei_TiempoTardado = 0
+hyundai_TiempoTardado = 0
+intel_TiempoTardado = 0
+java_TiempoTardado = 0
+_max_TiempoTardado = 0
+mcdonalds_1953_TiempoTardado = 0
+mercedes_TiempoTardado = 0
+michelin_TiempoTardado = 0
+numar_TiempoTardado = 0
+oralB_TiempoTardado = 0
+oreo_TiempoTardado = 0
+subway_TiempoTardado = 0
+swim_TiempoTardado = 0
+ups_TiempoTardado = 0
+valve_TiempoTardado = 0
+visa_TiempoTardado = 0
+walmart_TiempoTardado = 0
+whatsapp_TiempoTardado = 0
+yamaha_TiempoTardado = 0
 
 
 # Setup
@@ -414,16 +739,99 @@ ListaNivel3=[
 ]
 random.shuffle(ListaNivel3)
 
-ListaNivel4=[]
+ListaNivel4=[
+    [bimbo,bimbo_incompleto,bimbo_str,bimbo_TiempoTardado],
+    [colgate,colgate_incompleto,colgate_str,colgate_TiempoTardado],
+    [dell,dell_incompleto,dell_str,dell_TiempoTardado],
+    [dhl,dhl_incompleto,dhl_str,dhl_TiempoTardado],
+    [didi,didi_incompleto,didi_str,didi_TiempoTardado],
+    [disney,disney_incompleto,disney_str,disney_TiempoTardado],
+    [dominos,dominos_incompleto,dominos_str,dominos_TiempoTardado],
+    [doritos,doritos_incompleto,doritos_str,doritos_TiempoTardado],
+    [dospinos,dospinos_incompleto,dospinos_str,dospinos_TiempoTardado],
+    [gatorade,gatorade_incompleto,gatorade_str,gatorade_TiempoTardado],
+    [gog,gog_incompleto,gog_str,gog_TiempoTardado],
+    [google,google_incompleto,google_str,google_TiempoTardado],
+    [gucci,gucci_incompleto,gucci_str,gucci_TiempoTardado],
+    [gillette,gillette_incompleto,gillette_str,gillette_TiempoTardado],
+    [heineken,heineken_incompleto,heineken_str,heineken_TiempoTardado],
+    [imperial,imperial_incompleto,imperial_str,imperial_TiempoTardado],
+    [kellogs,kellogs_incompleto,kellogs_str,kellogs_TiempoTardado],
+    [kolbi,kolbi_incompleto,kolbi_str,kolbi_TiempoTardado],
+    [maggi,maggi_incompleto,maggi_str,maggi_TiempoTardado],
+    [mastercard,mastercard_incompleto,mastercard_str,mastercard_TiempoTardado],
+    [mattel,mattel_incompleto,mattel_str,mattel_TiempoTardado],
+    [maxi,maxi_incompleto,maxi_str,maxi_TiempoTardado],
+    [monopoly,monopoly_incompleto,monopoly_str,monopoly_TiempoTardado],
+    [motorola,motorola_incompleto,motorola_str,motorola_TiempoTardado],
+    [movistar,movistar_incompleto,movistar_str,movistar_TiempoTardado],
+    [nestle,nestle_incompleto,nestle_str,nestle_TiempoTardado],
+    [pali,pali_incompleto,pali_str,pali_TiempoTardado],
+    [pixar,pixar_incompleto,pixar_str,pixar_TiempoTardado],
+    [powerade,powerade_incompleto,powerade_str,powerade_TiempoTardado],
+    [pozuelo,pozuelo_incompleto,pozuelo_str,pozuelo_TiempoTardado],
+    [pringles,pringles_incompleto,pringles_str,pringles_TiempoTardado],
+    [rareware,rareware_incompleto,rareware_str,rareware_TiempoTardado],
+    [rexona,rexona_incompleto,rexona_str,rexona_TiempoTardado],
+    [riot,riot_incompleto,riot_str,riot_TiempoTardado],
+    [samsung,samsung_incompleto,samsung_str,samsung_TiempoTardado],
+    [scott,scott_incompleto,scott_str,scott_TiempoTardado],
+    [sony,sony_incompleto,sony_str,sony_TiempoTardado],
+    [tesla,tesla_incompleto,tesla_str,tesla_TiempoTardado],
+    [tigo,tigo_incompleto,tigo_str,tigo_TiempoTardado],
+    [uber,uber_incompleto,uber_str,uber_TiempoTardado]
+]
 random.shuffle(ListaNivel4)
 
-ListaNivel5=[]
+ListaNivel5=[
+    [alka,alka_incompleto,alka_str,alka_TiempoTardado],
+    [amd,amd_incompleto,amd_str,amd_TiempoTardado],
+    [atyt,atyt_incompleto,atyt_str,atyt_TiempoTardado],
+    [bacardi,bacardi_incompleto,bacardi_str,bacardi_TiempoTardado],
+    [bandai,bandai_incompleto,bandai_str,bandai_TiempoTardado],
+    [bayer,bayer_incompleto,bayer_str,bayer_TiempoTardado],
+    [cacique,cacique_incompleto,cacique_str,cacique_TiempoTardado],
+    [carlsjr,carlsjr_incompleto,carlsjr_str,carlsjr_TiempoTardado],
+    [cdprojekt,cdprojekt_incompleto,cdprojekt_str,cdprojekt_TiempoTardado],
+    [chanel,chanel_incompleto,chanel_str,chanel_TiempoTardado],
+    [cisco,cisco_incompleto,cisco_str,cisco_TiempoTardado],
+    [claro,claro_incompleto,claro_str,claro_TiempoTardado],
+    [corvette,corvette_incompleto,corvette_str,corvette_TiempoTardado],
+    [daniels,daniels_incompleto,daniels_str,daniels_TiempoTardado],
+    [dos,dos_incompleto,dos_str,dos_TiempoTardado],
+    [ebay,ebay_incompleto,ebay_str,ebay_TiempoTardado],
+    [edge,edge_incompleto,edge_str,edge_TiempoTardado],
+    [fedex,fedex_incompleto,fedex_str,fedex_TiempoTardado],
+    [ferrari,ferrari_incompleto,ferrari_str,ferrari_TiempoTardado],
+    [ford,ford_incompleto,ford_str,ford_TiempoTardado],
+    [gmail,gmail_incompleto,gmail_str,gmail_TiempoTardado],
+    [huawei,huawei_incompleto,huawei_str,huawei_TiempoTardado],
+    [hyundai,hyundai_incompleto,hyundai_str,hyundai_TiempoTardado],
+    [intel,intel_incompleto,intel_str,intel_TiempoTardado],
+    [java,java_incompleto,java_str,java_TiempoTardado],
+    [_max,_max_incompleto,_max_str,_max_TiempoTardado],
+    [mcdonalds_1953,mcdonalds_1953_incompleto,mcdonalds_1953_str,mcdonalds_1953_TiempoTardado],
+    [mercedes,mercedes_incompleto,mercedes_str,mercedes_TiempoTardado],
+    [michelin,michelin_incompleto,michelin_str,michelin_TiempoTardado],
+    [numar,numar_incompleto,numar_str,numar_TiempoTardado],
+    [oralB,oralB_incompleto,oralB_str,oralB_TiempoTardado],
+    [oreo,oreo_incompleto,oreo_str,oreo_TiempoTardado],
+    [subway,subway_incompleto,subway_str,subway_TiempoTardado],
+    [swim,swim_incompleto,swim_str,swim_TiempoTardado],
+    [ups,ups_incompleto,ups_str,ups_TiempoTardado],
+    [valve,valve_incompleto,valve_str,valve_TiempoTardado],
+    [visa,visa_incompleto,visa_str,visa_TiempoTardado],
+    [walmart,walmart_incompleto,walmart_str,walmart_TiempoTardado],
+    [whatsapp,whatsapp_incompleto,whatsapp_str,whatsapp_TiempoTardado],
+    [yamaha,yamaha_incompleto,yamaha_str,yamaha_TiempoTardado]
+]
 random.shuffle(ListaNivel5)
 
 Lista_Niveles=[ListaNivel1,ListaNivel2,ListaNivel3,ListaNivel4,ListaNivel5]
 
 Fondo = pygame.image.load("Media/Fondo.png").convert()
 FondoNegro = pygame.image.load("Media/FondoNegro.png").convert_alpha()
+FondoVictoria = pygame.image.load("Media/Victoria.png").convert_alpha()
 Opciones = Font_Daydream_30.render("Elija su respuesta:",False,"aquamarine")
 Nivel1 = Font_Daydream_100.render("Nivel 1",False,"aquamarine")
 Nivel2 = Font_Daydream_100.render("Nivel 2",False,"aquamarine")
@@ -435,7 +843,7 @@ point = 0
 guess1_button = pygame.Rect(1125,190,300,60)
 guess2_button = pygame.Rect(1125,290,300,60)
 guess3_button = pygame.Rect(1125,390,300,60)
-level=1
+level=5
 Cantidad_Logos_Admin = 10 
 exitosas=0
 NLogo=0
@@ -534,21 +942,21 @@ while True:
                 lugar,lugar2,lugar3 = randomizer(NLogo)
                 tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
                 Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
-                #print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
+                tiempo = tiempo_admin
             elif guess2_button.collidepoint(event.pos):
                 exitosas = exitosas + tr2 # -1 es igual a + (-1)
                 NLogo+=1
                 lugar,lugar2,lugar3 = randomizer(NLogo)
                 tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
                 Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
-                #print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
+                tiempo = tiempo_admin
             elif guess3_button.collidepoint(event.pos):
                 exitosas = exitosas + tr3 # -1 es igual a + (-1)
                 NLogo+=1
                 lugar,lugar2,lugar3 = randomizer(NLogo)
                 tiempoanterior = Lista_Niveles[level-1][NLogo-1][3]
                 Lista_Niveles[level-1][NLogo-1][3] = GuardarTiempos(tiempoanterior,tiempo)
-                #print(Lista_Niveles[level-1][NLogo-1][2],Lista_Niveles[level-1][NLogo-1][3])
+                tiempo = tiempo_admin
 
         if event.type==pygame.KEYDOWN:
             if active_user:
@@ -897,6 +1305,8 @@ while True:
                 exitosas = 0
                 NLogo=0
                 level += 1
+        else:
+            screen.blit(FondoVictoria, (0,0))
 
     pygame.display.update()
     clock.tick(60)

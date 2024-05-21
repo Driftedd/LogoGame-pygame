@@ -176,6 +176,16 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles):
                 if Lista_Niveles[e][i][3]=='':
                     Lista_Niveles[e][i][3]=0
                 user_info.write("\n"+(str(Lista_Niveles[e][i][3])))
+
+def Top10MejoresLogos():
+    Top10Tiempos=[]
+    for e in range(len(Lista_Niveles)):
+            for i in range(len(Lista_Niveles[e])):
+                Top10Tiempos.append(Lista_Niveles[e][i][3])
+    Top10Tiempos.sort()
+    Top10Tiempos.reverse()
+    Top10Tiempos=Top10Tiempos[0:10]
+    return Top10Tiempos
 '''
 Función: cargar información de usuario para seguir con el juego.
 Entradas: Abre el archivo externo con datos del usuario
@@ -1053,6 +1063,7 @@ tiempo = tiempo_admin
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 gaming = False
+_10MejoresTiempos=Top10MejoresLogos()
 leaderboard_icon=pygame.image.load("Media/Trofeo.png").convert_alpha()
 leaderboard_title=Font_Empire_80.render("Leaderboard",False,"White")
 leaderboard_background=pygame.image.load("Media/FondoLeaderboard.png").convert_alpha()
@@ -1255,6 +1266,26 @@ while True:
             mostrar=False
         screen.blit(selfleaderboard_background,(0,0))
         screen.blit(leaderboard_title,(540,50))
+        Tiempo1 = Font_Empire_40.render("2345",False,"White")
+        screen.blit(Tiempo1, (540, 350))
+        Tiempo2=Font_Empire_40.render(f"{_10MejoresTiempos[1]}",False,"White")
+        screen.blit(Tiempo2, (540, 450))
+        Tiempo3=Font_Empire_40.render(f"{_10MejoresTiempos[2]}",False,"White")
+        screen.blit(Tiempo3, (540, 650))
+        Tiempo4=Font_Empire_40.render(f"{_10MejoresTiempos[3]}",False,"White")
+        screen.blit(Tiempo4, (540, 750))
+        Tiempo5=Font_Empire_40.render(f"{_10MejoresTiempos[4]}",False,"White")
+        screen.blit(Tiempo5, (540, 850))
+        Tiempo6=Font_Empire_40.render(f"{_10MejoresTiempos[5]}",False,"White")
+        screen.blit(Tiempo6, (540, 950))
+        Tiempo7=Font_Empire_40.render(f"{_10MejoresTiempos[6]}",False,"White")
+        screen.blit(Tiempo7, (540, 1050))
+        Tiempo8=Font_Empire_40.render(f"{_10MejoresTiempos[7]}",False,"White")
+        screen.blit(Tiempo8, (540, 1150))
+        Tiempo9=Font_Empire_40.render(f"{_10MejoresTiempos[8]}",False,"White")
+        screen.blit(Tiempo9, (540, 1250))
+        Tiempo10=Font_Empire_40.render(f"{_10MejoresTiempos[9]}",False,"White")
+        screen.blit(Tiempo10, (540, 1350))
         screen.blit(Play,(650,800))
         selflead_play= pygame.Rect(640,790,280,70)
         if event.type == pygame.MOUSEBUTTONDOWN:

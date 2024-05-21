@@ -178,14 +178,18 @@ def guardarInfoUsuario(usuario_input,password_input,exitosas,Lista_Niveles):
                 user_info.write("\n"+(str(Lista_Niveles[e][i][3])))
 
 def Top10MejoresLogos():
-    Top10Tiempos=[]
-    for e in range(len(Lista_Niveles)):
-            for i in range(len(Lista_Niveles[e])):
-                Top10Tiempos.append(Lista_Niveles[e][i][3])
-    Top10Tiempos.sort()
-    Top10Tiempos.reverse()
-    Top10Tiempos=Top10Tiempos[0:10]
-    return Top10Tiempos
+    Top10Tiempos_lista = []
+    for nivel in Lista_Niveles:
+        for item in nivel:
+            if item[3] != 0:
+                Top10Tiempos_lista.append(item)
+    Top10Tiempos_lista.sort(key=lambda x: x[3])
+    Top10Tiempos_lista = Top10Tiempos_lista[:10]
+    Top10Tiempos_txt = [item[2] for item in Top10Tiempos_lista]
+    Top10Tiempos = [item[3] for item in Top10Tiempos_lista]
+
+    return Top10Tiempos, Top10Tiempos_txt
+
 '''
 Función: cargar información de usuario para seguir con el juego.
 Entradas: Abre el archivo externo con datos del usuario
@@ -238,6 +242,7 @@ Font_Daydream_100 = pygame.font.Font("Media/Font_Daydream.ttf", 100)
 Font_Empire_80 = pygame.font.Font("Media/Font_Empire.ttf", 80)
 Font_Empire_40 = pygame.font.Font("Media/Font_Empire.ttf", 40)
 Font_Minecraft = pygame.font.Font("Media/Font_Minecraft.ttf",50)
+Font_Apple = pygame.font.Font("Media/Font_Apple.ttf",50)
 text_x_pos = 230
 text_y_pos = 70
 
@@ -1063,7 +1068,6 @@ tiempo = tiempo_admin
 tempo = 60
 lugar,lugar2,lugar3 = randomizer(exitosas)
 gaming = False
-_10MejoresTiempos=Top10MejoresLogos()
 leaderboard_icon=pygame.image.load("Media/Trofeo.png").convert_alpha()
 leaderboard_title=Font_Empire_80.render("Leaderboard",False,"White")
 leaderboard_background=pygame.image.load("Media/FondoLeaderboard.png").convert_alpha()
@@ -1185,7 +1189,6 @@ while True:
                     password_input+=event.unicode              
 
     if USER=="START":
-        print(USER)
         screen.blit(Fondo,(0,0))
         if active_user==True:
             colour1=pygame.Color(0,42,210)
@@ -1241,7 +1244,6 @@ while True:
                 active_pw=False
 
     elif USER=="Leaderboard_General":
-        print(USER)
         screen.blit(leaderboard_background,(0,0))
         screen.blit(leaderboard_title,(540,50))
         screen.blit(leaderboard_regresar,(20,800))
@@ -1251,7 +1253,6 @@ while True:
                 USER = "START"
 
     elif USER == "Leaderboard_Self":
-        print(USER)
         if mostrar==True:
             #cambiar estas dos luego
             tiempototal=0
@@ -1261,31 +1262,27 @@ while True:
             infoUsuario=cargarInfoUsuario()
             exitosas=infoUsuario[0]
             Lista_Niveles=infoUsuario[1]
+            _10MejoresTiempos,_10MejoresTiempos_txt=Top10MejoresLogos()
             print('info cargada')
             mostrarInfoUsuario()
             mostrar=False
         screen.blit(selfleaderboard_background,(0,0))
         screen.blit(leaderboard_title,(540,50))
-        Tiempo1 = Font_Empire_40.render("2345",False,"White")
-        screen.blit(Tiempo1, (540, 350))
-        Tiempo2=Font_Empire_40.render(f"{_10MejoresTiempos[1]}",False,"White")
-        screen.blit(Tiempo2, (540, 450))
-        Tiempo3=Font_Empire_40.render(f"{_10MejoresTiempos[2]}",False,"White")
-        screen.blit(Tiempo3, (540, 650))
-        Tiempo4=Font_Empire_40.render(f"{_10MejoresTiempos[3]}",False,"White")
-        screen.blit(Tiempo4, (540, 750))
-        Tiempo5=Font_Empire_40.render(f"{_10MejoresTiempos[4]}",False,"White")
-        screen.blit(Tiempo5, (540, 850))
-        Tiempo6=Font_Empire_40.render(f"{_10MejoresTiempos[5]}",False,"White")
-        screen.blit(Tiempo6, (540, 950))
-        Tiempo7=Font_Empire_40.render(f"{_10MejoresTiempos[6]}",False,"White")
-        screen.blit(Tiempo7, (540, 1050))
-        Tiempo8=Font_Empire_40.render(f"{_10MejoresTiempos[7]}",False,"White")
-        screen.blit(Tiempo8, (540, 1150))
-        Tiempo9=Font_Empire_40.render(f"{_10MejoresTiempos[8]}",False,"White")
-        screen.blit(Tiempo9, (540, 1250))
-        Tiempo10=Font_Empire_40.render(f"{_10MejoresTiempos[9]}",False,"White")
-        screen.blit(Tiempo10, (540, 1350))
+        Nombre= Font_Apple.render(f"{usuario_input}",False,"White")
+        if len(_10MejoresTiempos) <=10:
+            for i in range(0,len(_10MejoresTiempos)):
+                Tiempo = Font_Apple.render(f"{_10MejoresTiempos[i]}s",False,"White")
+                Tiempo_txt = Font_Apple.render(f"{_10MejoresTiempos_txt[i]}",False,"White")
+                screen.blit(Tiempo_txt, (540, 250+(50*i)))
+                screen.blit(Tiempo, (1400, 250+(50*i)))
+                screen.blit(Nombre,(100,250+(50*i)))
+        else:
+            for i in range(0,10):
+                Tiempo = Font_Apple.render(f"{_10MejoresTiempos[i]}s",False,"White")
+                Tiempo_txt = Font_Apple.render(f"{_10MejoresTiempos_txt[i]}",False,"White")
+                screen.blit(Tiempo_txt, (540, 250+(50*i)))
+                screen.blit(Tiempo, (1400, 250+(50*i)))
+                screen.blit(Nombre,(100,250+(50*i)))
         screen.blit(Play,(650,800))
         selflead_play= pygame.Rect(640,790,280,70)
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -1294,7 +1291,6 @@ while True:
 
 
     elif USER=="CrearUsuario":
-        print(USER)
         screen.blit(Fondo,(0,0))
         screen.blit(crear_text,(180,85))
         screen.blit(regresar_text,(regresar_button.x,regresar_button.y+10))
@@ -1357,7 +1353,6 @@ while True:
                 active_pw=False
 
     elif USER=="admin":      
-        print(USER)
         password_input=""
         usuario_input=""
         screen.blit(Fondo,(0,0))
